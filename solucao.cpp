@@ -3,7 +3,7 @@
 using namespace std;
 
 
-int BT (grafo g, vector<int>graus, int k, unordered_set<int> h, unordered_set<int> hB, unordered_set<int> f, vector<bool> colorido = {},int bestsol = 0){
+pair<int,unordered_set<int>> BT (grafo g, vector<int>graus, int k, unordered_set<int> h, unordered_set<int> hB, unordered_set<int> f, vector<bool> colorido = {},int bestsol = 0){
     int v = -1;
     int graumin = g.size()+1;
     vector<int> auxiliar;
@@ -36,11 +36,11 @@ int BT (grafo g, vector<int>graus, int k, unordered_set<int> h, unordered_set<in
     v = candidatos[dist(gen)];
     if (colorido[v] ==1){//Considera se v foi colorido nessa etapa ou em uma anterior
         if(k-graus[v] < 0){
-                return bestsol;
+                return {bestsol,h};
             }
     }else{
         if ((k-(graus[v]+1)<0)){
-            return bestsol;
+            return {bestsol,h};
             }
         }
     fl.erase(v); //v é colorido para esse conjunto
@@ -90,24 +90,48 @@ int BT (grafo g, vector<int>graus, int k, unordered_set<int> h, unordered_set<in
     }
 
     bestsol = max(bestsol,static_cast<int>(hl.size()));
+    int melhor;
+    unordered_set<int> solucao1 = hl; // para poder retornar o conjunto-solução
+    unordered_set<int> solucao2 = hl;
     if ((hl.size() + fl.size()) > (bestsol)){ //Considero v feliz, k-graus[v]+1 pois colori graus[v] +1 vértices pela questão da não redefinição de f, uma chamada a mais, a não ser que v fosse o último
         if (colorido[v] == 1){ //Se essa etapa não coloriu v, o número de vértices coloridol não é k-graus[v]+1 (+1 é o próprio vértice, que já estava colorido)
-            bestsol = max(bestsol, (BT(g,grausl,k-(graus[v]),hl,hBl,fl,coloridol,bestsol)));
-            }
+            tie(melhor,solucao1) = BT(g,grausl,k-(graus[v]),hl,hBl,fl,coloridol,bestsol);
+            if (melhor< bestsol){
+                solucao1 = hl;
+            } 
+            else{
+                bestsol = melhor;
+            }   
+        }
         else{
-            bestsol = max(bestsol,(BT(g,grausl,k-(graus[v]+1),hl,hBl,fl,coloridol,bestsol)));
+            tie(melhor,solucao1) = (BT(g,grausl,k-(graus[v]+1),hl,hBl,fl,coloridol,bestsol));
+            if (melhor< bestsol){
+                solucao1 = hl;
+            } 
+            else{
+                bestsol = melhor;
+            }
             }
         }//O caso acima considera v feliz, de duas formas: v já estava colorido por uma etapa anterior ou não
         
         if ((h.size()+f.size())>(bestsol)){
-            bestsol = max(bestsol,(BT(g,graus,k,h,hB,f,colorido,bestsol))); 
-        }//não tornei ninguém feliz para essa etapa: considera os mesmos conjuntos, retirando v de f e introduzindo em hB
+            tie(melhor,solucao2) = (BT(g,graus,k,h,hB,f,colorido,bestsol)); 
+            if (melhor< bestsol){
+                solucao2 = hl;
+            } 
+            else{
+                bestsol = melhor;
+            }
+            }
+        //não tornei ninguém feliz para essa etapa: considera os mesmos conjuntos, retirando v de f e introduzindo em hB
         //hB não é necessário no geral
-
-    return bestsol;
+    if (solucao1.size()>solucao2.size()){
+        return {bestsol,solucao1};    
+    }
+    return {bestsol,solucao2};
 }
 
-int felicidade_maxima(grafo g,vector<int> graus, int k){
+pair<int,unordered_set<int>> felicidade_maxima(grafo g,vector<int> graus, int k){
     unordered_set<int> h;
     unordered_set<int> hB;
     unordered_set<int> coloriveis;
@@ -126,10 +150,13 @@ int felicidade_maxima(grafo g,vector<int> graus, int k){
 int main(){ //Isso aqui é o problema da mochila, com os custos variando: tentar fazer um bottom up pra melhorar
     grafo g;
     vector<int> graus; 
+    unordered_set<int> resposta;
+    int b;
     tie(g,graus)= criador_grafos(6,9);
-    int b = felicidade_maxima(g,graus,5);
+    tie(b,resposta) = felicidade_maxima(g,graus,5);
     cout << b<< endl;
     return 0;
 }
+
 
 //rever e passar para o git de manhazinha: testar outros casos.
