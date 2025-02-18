@@ -260,21 +260,22 @@ def create_log_folder():
     return log_folder
 
 # Função para calcular os valores de k a serem testados
-def get_k_values(k, num_vertices):
+def get_k_values(num_vertices):
     k_values = [
-        # math.ceil(0.20 * num_vertices), 
-        math.ceil(0.50 * num_vertices), 
-        # math.ceil(0.90 * num_vertices),
+        math.ceil(0.40 * num_vertices), 
+        math.ceil(0.80 * num_vertices),
+        math.ceil(0.60 * num_vertices)
+        
     ]
     
     # Filtrar os valores para manter apenas os maiores que o valor de k
-    k_values = [value for value in k_values if value > k]
+    #k_values = [value for value in k_values if value > k]
 
     # Adiciona k na lista, caso seja maior que 0 e não tenha sido descartado
-    if k > 0 and k not in k_values:
-        k_values.insert(0, k)
+   # if k > 0 and k not in k_values:
+   #     k_values.insert(0, k)
 
-    return sorted(set(k_values))  
+   # return sorted(set(k_values))  
 
 # Função para obter arquivos em uma pasta com uma extensão específica
 def get_files_in_folder(folder_path, extension=".txt"):
@@ -286,7 +287,6 @@ def get_files_in_folder(folder_path, extension=".txt"):
 def process_files_in_folder(folder_path):
     files = get_files_in_folder(folder_path)
     results = []
-
     # Criar a pasta de logs, caso não exista
     log_folder = create_log_folder()
     vasco = 0
@@ -297,85 +297,87 @@ def process_files_in_folder(folder_path):
         print(f"\nProcessando arquivo: {file}")
         instancia = GraphInstance(file)
         adj_list, precolored, vertices, arestas, k = instancia.get_data()
+        kvalues = get_k_values(vertices)
         print(adj_list)
         print(k)
         limit = 1200#passar isso como parametro da file?
         seed = 10#passar isso como parametro da file?
-        subprocess.run([r"codigoscpp\\scripttodo.exe", file, str(limit), str(seed)])
-        # Nome da instância (arquivo sem extensão)
-        instance_name = os.path.basename(file)
-        nodes_processed,time_spent,answer_back, happy_back,colored_back,answer_heur = read_data_giovanni("resultcpp.txt")
-        # Calcular os valores de k a serem testados
+        for k in kvalues:
+            subprocess.run([r"codigoscpp\\scripttodo.exe", file, k, str(limit), str(seed)])
+            # Nome da instância (arquivo sem extensão)
+            instance_name = os.path.basename(file)
+            nodes_processed,time_spent,answer_back, happy_back,colored_back,answer_heur = read_data_giovanni("resultcpp.txt")
+            # Calcular os valores de k a serem testados
 
-        # Resolver o problema para os valores de k calculados
-        print(f"\nValor de k: {k}")
+            # Resolver o problema para os valores de k calculados
+            print(f"\nValor de k: {k}")
+            
+            # Definir o nome do arquivo de log
+            log_file_path = os.path.join(log_folder, f'log_{instance_name}_k{k}.txt')
+            
+            #Algoritmo CP Optimizer
+            selected_vertices_cp, happy_vertices_cp, exec_time_cp, objective_value_cp, gap_cp,processed_nodes_cp = maxhs_cp(adj_list, k ,log_file_path)
+            print("Algoritmo CP Optimizer:")
+            print("Vértices selecionados:", selected_vertices_cp)
+            print("Vértices felizes:", happy_vertices_cp)
+            print(f"Tempo de execução: {exec_time_cp:.4f} segundos")
+            print(f"Valor da função objetivo: {objective_value_cp}")
+            print(f"Número de nós explorados: {processed_nodes_cp}")
+            print(f"Valor do GAP do CP: {gap_cp}")
+
+            # Algoritmo Original
+            selected_vertices_orig, happy_vertices_orig, exec_time_orig, objective_value_orig,gap,processed_nodes = solve_original_model(adj_list, k ,log_file_path)
+            print("Algoritmo Original:")
+            print("Vértices selecionados:", selected_vertices_orig)
+            print("Vértices felizes:", happy_vertices_orig)
+            print(f"Tempo de execução: {exec_time_orig:.4f} segundos")
+            print(f"Valor da função objetivo: {objective_value_orig}")
+            print(f"Número de nós explorados: {processed_nodes}")
+            print(f"Valor do GAP: {gap}")
+
+            #coloca em ja usados, o arquivo
+            os.rename(file,f"pasta\\ja_usadas\\{file[6:]}")
+            #aqui entra os códigos
+
+                # Benders
+            # selected_vertices_ben_aut, happy_vertices_ben_aut, exec_time_ben_aut, objective_value_ben_aut = model_benders(adj_list, k_val)
+            # print("Algoritmo Automatico de Benders:")
+            # print("Vértices selecionados:", selected_vertices_ben_aut)
+            # print("Vértices felizes:", happy_vertices_ben_aut)
+            # print(f"Tempo de execução: {exec_time_ben_aut:.4f} segundos")
+    #            print(f"Valor da função objetivo: {objective_value_ben_aut}")
         
-        # Definir o nome do arquivo de log
-        log_file_path = os.path.join(log_folder, f'log_{instance_name}_k{k}.txt')
-        
-        #Algoritmo CP Optimizer
-        selected_vertices_cp, happy_vertices_cp, exec_time_cp, objective_value_cp, gap_cp,processed_nodes_cp = maxhs_cp(adj_list, k ,log_file_path)
-        print("Algoritmo CP Optimizer:")
-        print("Vértices selecionados:", selected_vertices_cp)
-        print("Vértices felizes:", happy_vertices_cp)
-        print(f"Tempo de execução: {exec_time_cp:.4f} segundos")
-        print(f"Valor da função objetivo: {objective_value_cp}")
-        print(f"Número de nós explorados: {processed_nodes_cp}")
-        print(f"Valor do GAP do CP: {gap_cp}")
 
-        # Algoritmo Original
-        selected_vertices_orig, happy_vertices_orig, exec_time_orig, objective_value_orig,gap,processed_nodes = solve_original_model(adj_list, k ,log_file_path)
-        print("Algoritmo Original:")
-        print("Vértices selecionados:", selected_vertices_orig)
-        print("Vértices felizes:", happy_vertices_orig)
-        print(f"Tempo de execução: {exec_time_orig:.4f} segundos")
-        print(f"Valor da função objetivo: {objective_value_orig}")
-        print(f"Número de nós explorados: {processed_nodes}")
-        print(f"Valor do GAP: {gap}")
+            #Armazenando os resultados como listas (strings)
+            #nesse results, introduzir os valores da heurística e do código backtracking
+            results.append({
+                "instance_name": instance_name,
+                "k": k,
+                "selected_vertices_cp": str(selected_vertices_cp),
+                "happy_vertices_cp": str(happy_vertices_cp),
+                "exec_time_cp": exec_time_cp,
+                "objective_value_cp": objective_value_cp,
+                "gap_cp":gap_cp,
+                "processed_nodes_cp":processed_nodes_cp,
+                "selected_vertices_orig": str(selected_vertices_orig),
+                "happy_vertices_orig": str(happy_vertices_orig),
+                "exec_time_orig": exec_time_orig,
+                "objective_value_orig": objective_value_orig,
+                "gap": gap,
+                "processed_nodes":processed_nodes,
+                "happy_vertices_back": str(happy_back),
+                "selected_vertices_back": str(colored_back),
+                "objective_value_back" : answer_back,
+                "processed_nodes_back": nodes_processed,
+                "tempo_back": time_spent,
+                "objective_value_heur": answer_heur
 
-        #coloca em ja usados, o arquivo
-        os.rename(file,f"pasta\\ja_usadas\\{file[6:]}")
-        #aqui entra os códigos
+                # "selected_vertices_ben_aut": str(selected_vertices_ben_aut),
+                # "happy_vertices_ben_aut": str(happy_vertices_ben_aut),
+                # "exec_time_ben_aut": exec_time_ben_aut,
+                # "objective_value_ben_aut": objective_value_ben_aut
 
-            # Benders
-        # selected_vertices_ben_aut, happy_vertices_ben_aut, exec_time_ben_aut, objective_value_ben_aut = model_benders(adj_list, k_val)
-        # print("Algoritmo Automatico de Benders:")
-        # print("Vértices selecionados:", selected_vertices_ben_aut)
-        # print("Vértices felizes:", happy_vertices_ben_aut)
-        # print(f"Tempo de execução: {exec_time_ben_aut:.4f} segundos")
-#            print(f"Valor da função objetivo: {objective_value_ben_aut}")
-    
-
-        #Armazenando os resultados como listas (strings)
-        #nesse results, introduzir os valores da heurística e do código backtracking
-        results.append({
-            "instance_name": instance_name,
-            "k": k,
-            "selected_vertices_cp": str(selected_vertices_cp),
-            "happy_vertices_cp": str(happy_vertices_cp),
-            "exec_time_cp": exec_time_cp,
-            "objective_value_cp": objective_value_cp,
-            "gap_cp":gap_cp,
-            "processed_nodes_cp":processed_nodes_cp,
-            "selected_vertices_orig": str(selected_vertices_orig),
-            "happy_vertices_orig": str(happy_vertices_orig),
-            "exec_time_orig": exec_time_orig,
-            "objective_value_orig": objective_value_orig,
-            "gap": gap,
-            "processed_nodes":processed_nodes,
-            "happy_vertices_back": str(happy_back),
-            "selected_vertices_back": str(colored_back),
-            "objective_value_back" : answer_back,
-            "processed_nodes_back": nodes_processed,
-            "tempo_back": time_spent,
-            "objective_value_heur": answer_heur
-
-            # "selected_vertices_ben_aut": str(selected_vertices_ben_aut),
-            # "happy_vertices_ben_aut": str(happy_vertices_ben_aut),
-            # "exec_time_ben_aut": exec_time_ben_aut,
-            # "objective_value_ben_aut": objective_value_ben_aut
-
-        })
+            })
     # Salvar os resultados em um arquivo Excel dentro da pasta CP
     save_results_to_excel(results, log_folder)
 def read_data_giovanni(path):
