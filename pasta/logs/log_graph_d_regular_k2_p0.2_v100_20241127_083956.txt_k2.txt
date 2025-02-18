@@ -1,0 +1,45 @@
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+CPXPARAM_Preprocessing_Aggregator                0
+CPXPARAM_ClockType                               1
+CPXPARAM_Preprocessing_Presolve                  0
+CPXPARAM_Read_DataCheck                          1
+CPXPARAM_Preprocessing_Reduce                    0
+CPXPARAM_Threads                                 1
+CPXPARAM_Preprocessing_Reformulations            0
+CPXPARAM_MIP_Cuts_Cliques                        -1
+CPXPARAM_Preprocessing_CoeffReduce               0
+CPXPARAM_MIP_Cuts_Covers                         -1
+CPXPARAM_Preprocessing_BoundStrength             0
+CPXPARAM_Preprocessing_Relax                     0
+CPXPARAM_MIP_Cuts_FlowCovers                     -1
+CPXPARAM_MIP_Cuts_Implied                        -1
+CPXPARAM_MIP_Cuts_Gomory                         -1
+CPXPARAM_MIP_Cuts_PathCut                        -1
+CPXPARAM_MIP_Cuts_MIRCut                         -1
+CPXPARAM_MIP_Cuts_ZeroHalfCut                    -1
+CPXPARAM_MIP_Cuts_LiftProj                       -1
+CPXPARAM_MIP_Strategy_HeuristicFreq              -1
+CPXPARAM_TimeLimit                               300
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: none, using 1 thread.
+Root relaxation solution time = 0.02 sec. (6.22 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0        2.0000   100                      2.0000      290         
+      0     2        2.0000   100                      2.0000      290         
+Elapsed time = 0.11 sec. (103.03 ticks, tree = 0.01 MB, solutions = 0)
+*    25    25      integral     0        0.0000        1.1124     1063     --- 
+    110    67        0.4773    88        0.0000        1.0000     2706     --- 
+    659   279        cutoff              0.0000        0.3333     8065     --- 
+
+Root node processing (before b&c):
+  Real time             =    0.11 sec. (103.00 ticks)
+Sequential b&c:
+  Real time             =    0.64 sec. (578.38 ticks)
+                          ------------
+Total (root+branch&cut) =    0.75 sec. (681.38 ticks)
+2025-02-17 23:34:26,302 - INFO - Iniciando a otimização com CP Optimizer.
+2025-02-17 23:34:26,491 - INFO - Iniciando a otimização com o modelo original.
