@@ -18,7 +18,7 @@ int main(/*int argc, char* argv[]*/) {
     int seed = stoi(argv[4]);*/
     string path = "/home/aluno/Documents/giotemp/IC-PARTE2-main/pasta/graph_d_regular_k2_p0.3_v100_20241127_083958.txt";
     int k = 50;
-    int limit = 60;
+    int limit = 120;
     int seed = 0;
     ofstream arquivoresult("resultcpp.txt");
     grafo g;
@@ -35,7 +35,7 @@ int main(/*int argc, char* argv[]*/) {
     //lendo o grafo
     clock_t clock_start;
     clock_t clock_end;
-    int tempo;
+    double tempo;
     pair<int,unordered_set<int>> getter;
     //executando backtracking
     time_t timestamp = time(&timestamp);
@@ -68,15 +68,25 @@ int main(/*int argc, char* argv[]*/) {
     vector<int> happyheur;
     int solutionheur;
     int ajuda;
+    unordered_set<int> respostas;
     for (int i = 0;i<25;i++){//marcar todos os resultados e ver os tempos--total e individual
         ajuda = solutionheur;
+        clock_start = clock();
+
         solutionheur = felicidade_maxima(g,graus,k,seed);
+        clock_start = clock();
+        tempo += double((clock_end-clock_start)/CLOCKS_PER_SEC);
+        respostas.insert(solutionheur);
         if (ajuda>solutionheur){
-            solutionheur = ajuda;
+            solutionheur = ajuda; //colocar no arquivo intermediário os dados de tempo e das respostas no geral
         }
 
     }
     arquivoresult<< solutionheur<< endl;
+    arquivoresult<<tempo<<endl;
+    for (int element: respostas){
+        arquivoresult<<"v "<<element<<endl;
+    }
     arquivoresult.close();
 
 
