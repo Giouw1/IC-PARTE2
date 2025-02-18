@@ -306,7 +306,7 @@ def process_files_in_folder(folder_path):
             subprocess.run([r"codigoscpp\\scripttodo.exe", file, k, str(limit), str(seed)])
             # Nome da instância (arquivo sem extensão)
             instance_name = os.path.basename(file)
-            nodes_processed,time_spent,answer_back, happy_back,colored_back,answer_heur = read_data_giovanni("resultcpp.txt")
+            nodes_processed,time_spent,answer_back, happy_back,colored_back,answer_heur = read_data_giovanni("codigoscpp\\resultcpp.txt")
             # Calcular os valores de k a serem testados
 
             # Resolver o problema para os valores de k calculados
