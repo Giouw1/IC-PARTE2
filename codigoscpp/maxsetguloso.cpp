@@ -9,12 +9,14 @@ int BT (grafo g, vector<int>custos, int k, unordered_set<int> f,int seed){
     int resposta = 0;
     vector<int> colorido(g.size(),0);
     std::mt19937 gen(seed);
+    unordered_set<int> happy;
+    unordered_set<int> coloridos;
     while (k>0){
         int v = -1;
         graumin = g.size()+1;
         candidato = {};
         for (auto it = f.begin(); it != f.end(); ) {
-            //1a etapa, escolher o candidato v
+            //1a etapa, escolher o candidato v:certo
             if (colorido[*it]){
                     if (custos[*it]<graumin){
                         graumin = custos[*it];
@@ -37,13 +39,21 @@ int BT (grafo g, vector<int>custos, int k, unordered_set<int> f,int seed){
         uniform_int_distribution<int> dist(0,candidato.size()-1);
         v = candidato[dist(gen)];
         //Gera o candidato
-        if (k-custos[v]<0){
-            return resposta;
+        if (colorido[v] == 0){
+            resposta+=1;
+            k-=custos[v]+1;
         }
         else{
             resposta+=1;
-            k-=custos[v];
+            k -=custos[v];
+
         }
+        if (k<0){
+            resposta-=1;
+            return resposta;
+        }
+        happy.insert(v);
+        cout<< (k<0) <<endl;
 
 
         //descobri o v, agora tenho que redefinir os custos
@@ -53,6 +63,7 @@ int BT (grafo g, vector<int>custos, int k, unordered_set<int> f,int seed){
                 custos[viz]--; //tira 1 grau pois o vértice v ficou feliz, logo, colorido
             }
             if (colorido[viz] == 0){ //se o vértice i já não tiver sido colorido por uma outra etapa
+                coloridos.insert(viz);
                 colorido[viz] = 1; //colore ele, e colore os vizinhos se eles ja nao forem coloridos, para o mundo de v feliz
                 for (int vizviz : g[viz]){ // A avaliação dos vizinhos i dos vértices vizinhos ao feliz da vez
                     custos[vizviz]--;//tira 1 grau para cada vizinho dos coloridol que deixam v feliz. 
@@ -63,23 +74,18 @@ int BT (grafo g, vector<int>custos, int k, unordered_set<int> f,int seed){
             colorido[v] = 1;
             f.erase(v);
         }
+
         return resposta;
     }
 
 int felicidade_maxima(grafo g,vector<int> custos, int k,int seed){
     unordered_set<int> coloriveis;
     vector<int> coloridos(g.size(),0);
-    for (int i = 0;i<custos.size();i++){
-            coloriveis.insert(i);
+    for (int i = 0;i<g.size();i++){
+        coloriveis.insert(i);
     }
     return BT(g,custos,k,coloriveis,seed);
 }
-/*int main(){
-    grafo g;
-    vector<int> graus;
-    tie(g,graus) = leitor_grafos("C:\\Users\\Gio Faletti\\Documents\\GioPosEscola\\ic\\color_graphs\\maxsetsolucaobruta\\pasta\\ja_usadas\\graph_d_regular_k2_p0.1_v100_20241127_083952.txt");
-    cout <<felicidade_maxima(g,graus,80,1) << endl;
-}*/
 
 
 

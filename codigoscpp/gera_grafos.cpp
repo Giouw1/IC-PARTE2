@@ -7,7 +7,7 @@
 using namespace std;
 typedef vector<vector<int>> grafo;
 
-pair<int,pair<grafo,vector<int>>> leitor_grafos(string path){
+pair<grafo,vector<int>> leitor_grafos(string path){
     ifstream file(path);
     string line;
     grafo g;
@@ -46,6 +46,6 @@ pair<int,pair<grafo,vector<int>>> leitor_grafos(string path){
             }
         }
     }
-    return {k,{g,graus}};
+    return {g,graus};
 
 }

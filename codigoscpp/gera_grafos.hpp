@@ -8,7 +8,7 @@ using namespace std;
 typedef vector<vector<int>> grafo;
 
 //preco = pre colored, numco = numero de cores, nvert = numero de vertices
-pair<int,pair<grafo,vector<int>>> leitor_grafos(string path);
+pair<grafo,vector<int>> leitor_grafos(string path);
 
 
 
