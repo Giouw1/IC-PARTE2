@@ -63,7 +63,7 @@ def maxhs_cp(graph, k, log_file):#comparar
 
         # Passando o objeto de arquivo log_output para o parâmetro log_output
         solution = cpomdl.solve(
-            TimeLimit=300, 
+            TimeLimit=600, 
             Presolve='Off', 
             Workers=1, 
             execfile=cpoptimizer_path, 
@@ -81,8 +81,8 @@ def maxhs_cp(graph, k, log_file):#comparar
             if all(solution[x[j]] == 1 for j in closed_neighbors):
                 happy_vertices.append(i)
         objective_value = solution.get_objective_value()  # Valor da função objetivo
-        gap_cp = solution.get_objective_gap() 
-        processed_nodes_cp = 3 #usar em todos
+        gap_cp = solution.get_objective_gap()
+        processed_nodes_cp = solution.get_info("NumberOfChoicePoints") #usar em todos
         return selected_vertices, happy_vertices, exec_time, objective_value, gap_cp,processed_nodes_cp
     else:
         logger.error("Solução não encontrada!")
@@ -116,7 +116,7 @@ def solve_original_model(lista_viz, k, log_file):#comparar
     mdl.parameters.mip.cuts.covers.set(-1)
     mdl.parameters.threads.set(1)
     mdl.parameters.clocktype.set(1)
-    mdl.parameters.timelimit.set(300)
+    mdl.parameters.timelimit.set(600)
     mdl.parameters.preprocessing.presolve.set(0)
     mdl.parameters.preprocessing.boundstrength.set(0)
     mdl.parameters.preprocessing.coeffreduce.set(0)
@@ -175,7 +175,7 @@ def model_benders(lista_viz, k):
     mdl.parameters.mip.cuts.covers.set(-1)
     mdl.parameters.threads.set(1)
     mdl.parameters.clocktype.set(1)
-    mdl.parameters.timelimit.set(60)
+    mdl.parameters.timelimit.set(600)
     mdl.parameters.preprocessing.presolve.set(0)
     mdl.parameters.preprocessing.boundstrength.set(0)
     mdl.parameters.preprocessing.coeffreduce.set(0)
@@ -219,7 +219,7 @@ def save_results_to_excel(results, log_folder, filename="results.xlsx"):
                         "selected_vertices_orig", "happy_vertices_orig", 
                         "exec_time_orig", "objective_value_orig","gap","processed_nodes","happy_vertices_back",
                         "selected_vertices_back","objective_value_back","processed_nodes_back",
-                        "tempo_back","objective_value_heur"
+                        "tempo_back","best_objective_value_heur", "all_objective_value_heur", "total_time_heur"
                      ])
         row = 2
 
@@ -243,7 +243,8 @@ def save_results_to_excel(results, log_folder, filename="results.xlsx"):
                       selected_vertices_orig_str, happy_vertices_orig_str,
                       result["exec_time_orig"], result["objective_value_orig"], result["gap"], result["processed_nodes"],
                       result["happy_vertices_back"], result["selected_vertices_back"], result["objective_value_back"], 
-                      result["processed_nodes_back"], result["tempo_back"], result["objective_value_heur"]
+                      result["processed_nodes_back"], result["tempo_back"], result["best_objective_value_heur"],
+                      result["all_objective_value_heur"], result["total_time_heur"]
                     ])
         
         
@@ -263,19 +264,22 @@ def create_log_folder():
 def get_k_values(num_vertices):
     k_values = [
         math.ceil(0.40 * num_vertices), 
-        math.ceil(0.80 * num_vertices),
+        math.ceil(0.50 * num_vertices),
         math.ceil(0.60 * num_vertices)
-        
     ]
-    
+    if (num_vertices<=10):
+        k_values = [
+            math.ceil(0.80 * num_vertices),
+            math.ceil(0.60 * num_vertices)
+        ]
     # Filtrar os valores para manter apenas os maiores que o valor de k
     #k_values = [value for value in k_values if value > k]
 
     # Adiciona k na lista, caso seja maior que 0 e não tenha sido descartado
    # if k > 0 and k not in k_values:
-   #     k_values.insert(0, k)
+   #     k_values.insert(0, k)  
 
-   # return sorted(set(k_values))  
+    return sorted(k_values)
 
 # Função para obter arquivos em uma pasta com uma extensão específica
 def get_files_in_folder(folder_path, extension=".txt"):
@@ -292,21 +296,19 @@ def process_files_in_folder(folder_path):
     vasco = 0
     for file in files:
         vasco+=1
-        if vasco == 13:
+        if vasco == 5:
             break
         print(f"\nProcessando arquivo: {file}")
         instancia = GraphInstance(file)
-        adj_list, precolored, vertices, arestas, k = instancia.get_data()
-        kvalues = get_k_values(vertices)
-        print(adj_list)
-        print(k)
-        limit = 1200#passar isso como parametro da file?
+        adj_list, precolored, vertices, arestas,kk = instancia.get_data()
+        kvalues = get_k_values(len(adj_list))
+        limit = 600#passar isso como parametro da file?
         seed = 10#passar isso como parametro da file?
         for k in kvalues:
-            subprocess.run([r"codigoscpp\\scripttodo.exe", file, k, str(limit), str(seed)])
+            subprocess.run([r"codigoscpp\\scripttodo.exe", file, str(k), str(limit), str(seed)])
             # Nome da instância (arquivo sem extensão)
             instance_name = os.path.basename(file)
-            nodes_processed,time_spent,answer_back, happy_back,colored_back,answer_heur = read_data_giovanni("codigoscpp\\resultcpp.txt")
+            nodes_processed,time_spent,answer_back, happy_back,colored_back,answer_heur, answers_heur, time_heur = read_data_giovanni("resultcpp.txt")
             # Calcular os valores de k a serem testados
 
             # Resolver o problema para os valores de k calculados
@@ -334,9 +336,6 @@ def process_files_in_folder(folder_path):
             print(f"Valor da função objetivo: {objective_value_orig}")
             print(f"Número de nós explorados: {processed_nodes}")
             print(f"Valor do GAP: {gap}")
-
-            #coloca em ja usados, o arquivo
-            os.rename(file,f"pasta\\ja_usadas\\{file[6:]}")
             #aqui entra os códigos
 
                 # Benders
@@ -370,7 +369,10 @@ def process_files_in_folder(folder_path):
                 "objective_value_back" : answer_back,
                 "processed_nodes_back": nodes_processed,
                 "tempo_back": time_spent,
-                "objective_value_heur": answer_heur
+                "best_objective_value_heur": answer_heur,
+                "all_objective_value_heur": str(answers_heur),
+                "total_time_heur": time_heur
+
 
                 # "selected_vertices_ben_aut": str(selected_vertices_ben_aut),
                 # "happy_vertices_ben_aut": str(happy_vertices_ben_aut),
@@ -378,6 +380,9 @@ def process_files_in_folder(folder_path):
                 # "objective_value_ben_aut": objective_value_ben_aut
 
             })
+                    #coloca em ja usados, o arquivo
+        os.rename(file,f"pasta\\ja_usadas\\{file[6:]}")
+
     # Salvar os resultados em um arquivo Excel dentro da pasta CP
     save_results_to_excel(results, log_folder)
 def read_data_giovanni(path):
@@ -387,6 +392,9 @@ def read_data_giovanni(path):
     colored_back = []
     happy_back = []
     answer_heur = 0
+    answers_heur = []
+    marker = 0
+    tempo_heur = 0
     with open(path, 'r') as file:
         first_line = file.readline()
         for i in range(len(first_line)):
@@ -397,14 +405,22 @@ def read_data_giovanni(path):
                         time_spent = int(first_line[i+1:j])
                         answer_back = int(first_line[j+1:])
         for line in file:
+            if line == "vasco\n":
+                continue
             if (line[0] == "h"):
                 happy_back+=[int(line[2:])]
             if (line[0] == "c"):
                 colored_back+=[int(line[2:])]
-            if (line[0] != "h" and line[0] != "c"):
+            if (line[0] == "v"):
+                answers_heur+= [int(line[2:])]
+            if (line[0] != "h" and line[0] != "c" and line[0]!= "v" and marker == 1):
+                tempo_heur= int(line)
+            if (line[0] != "h" and line[0] != "c" and line[0]!= "v" and (marker == 0)):
+                marker = 1
                 answer_heur = int(line)
+        
     file.close()
-    return (nodes_processed,time_spent,answer_back, happy_back,colored_back,answer_heur)
+    return (nodes_processed,time_spent,answer_back, happy_back,colored_back,answer_heur,answers_heur,tempo_heur)
 # Caminho da pasta com os arquivos
 #folder_path = '/home/rafael/Documents/HappySet/MIHS/inputs/happygen/output/testes/testes_cp_benders'
 # folder_path ='/home/rafael/Documents/HappySet/MIHS/inputs/happygen/output/testes/7-10'
@@ -417,3 +433,5 @@ folder_path = 'pasta'
 
 # Chama a função para processar os arquivos da pasta
 process_files_in_folder(folder_path)    
+#processed nodes cp
+#heuristica ver tudo
