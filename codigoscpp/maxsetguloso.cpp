@@ -53,7 +53,6 @@ int BT (grafo g, vector<int>custos, int k, unordered_set<int> f,int seed){
             return resposta;
         }
         happy.insert(v);
-        cout<< (k<0) <<endl;
 
 
         //descobri o v, agora tenho que redefinir os custos
