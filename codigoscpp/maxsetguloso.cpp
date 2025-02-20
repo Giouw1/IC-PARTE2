@@ -1,38 +1,51 @@
 #include <bits/stdc++.h> // Todas as bibliotecas padrão de c++
 #include <iostream>
+#include "gera_grafos.hpp"
 #include "maxsetguloso.hpp"
 //randomizar isso daqui
 int BT (grafo g, vector<int>custos, int k, unordered_set<int> f,int seed){
-    int v;
+    vector<int> candidato(0);
     int graumin;
     int resposta = 0;
     vector<int> colorido(g.size(),0);
+    std::mt19937 gen(seed);
     while (k>0){
-        v=-1;
+        int v = -1;
         graumin = g.size()+1;
+        candidato = {};
         for (auto it = f.begin(); it != f.end(); ) {
             //1a etapa, escolher o candidato v
             if (colorido[*it]){
                     if (custos[*it]<graumin){
                         graumin = custos[*it];
-                        v = *it;
+                        candidato = {*it};
                     }
-                }
-            else{
+                    if (custos[*it]==graumin){
+                        candidato.push_back(*it);
+                    }
+            }   else{
                     if (custos[*it]+1<graumin){
                         graumin = custos[*it]+1;
-                        v = *it;
-                }
+                        candidato = {*it};
+                    }
+                    if (custos[*it]+1==graumin){
+                        candidato.push_back(*it);
+                    }
             }
             it++;
-            }
-            if (graumin>k){
-                 return resposta;
-            }
-            else{
-                k = k-graumin;
-            }
-        resposta+=1;
+        }
+        uniform_int_distribution<int> dist(0,candidato.size()-1);
+        v = candidato[dist(gen)];
+        //Gera o candidato
+        if (k-custos[v]<0){
+            return resposta;
+        }
+        else{
+            resposta+=1;
+            k-=custos[v];
+        }
+
+
         //descobri o v, agora tenho que redefinir os custos
         for (int viz : g[v]){  //para cada vizinho de v e para cada vizinho dos vizinhos de v, reduzir o grau do vizinho em 1, caso nao tenham sido coloridos
             //Se v já tinha sido colorido na etapa anterior, não precisa reavaliar vizinhos de v
@@ -61,7 +74,12 @@ int felicidade_maxima(grafo g,vector<int> custos, int k,int seed){
     }
     return BT(g,custos,k,coloriveis,seed);
 }
-
+/*int main(){
+    grafo g;
+    vector<int> graus;
+    tie(g,graus) = leitor_grafos("C:\\Users\\Gio Faletti\\Documents\\GioPosEscola\\ic\\color_graphs\\maxsetsolucaobruta\\pasta\\ja_usadas\\graph_d_regular_k2_p0.1_v100_20241127_083952.txt");
+    cout <<felicidade_maxima(g,graus,80,1) << endl;
+}*/
 
 
 
