@@ -12,6 +12,7 @@ import math
 import logging
 import openpyxl 
 import sys
+import platform
 from contextlib import contextmanager
 
 # Função para configurar o logger
@@ -50,7 +51,7 @@ def maxhs_cp(graph, k, log_file):#comparar
     cpomdl.maximize(objective)
     cpomdl.add_constraint(cpomdl.sum(x) == k)
 
-    cpoptimizer_path = 'C:/Program Files/IBM/ILOG/CPLEX_Studio2211/cpoptimizer/bin/x64_win64/cpoptimizer.exe'
+    cpoptimizer_path = '/home/aluno/cpoptimizer/bin/x86-64_linux/cpoptimizer.exe'
 
     start_time = time.time()  # Tempo de início da execução
 
@@ -219,7 +220,8 @@ def save_results_to_excel(results, log_folder, filename="results.xlsx"):
                         "selected_vertices_orig", "happy_vertices_orig", 
                         "exec_time_orig", "objective_value_orig","gap","processed_nodes","happy_vertices_back",
                         "selected_vertices_back","objective_value_back","processed_nodes_back",
-                        "tempo_back","best_objective_value_heur", "all_objective_value_heur", "total_time_heur"
+                        "tempo_back","best_objective_value_heur", "all_objective_value_heur", "total_time_heur",
+                        "happy_vertices_heur","colored_vertices_heur"
                      ])
         row = 2
 
@@ -244,7 +246,7 @@ def save_results_to_excel(results, log_folder, filename="results.xlsx"):
                       result["exec_time_orig"], result["objective_value_orig"], result["gap"], result["processed_nodes"],
                       result["happy_vertices_back"], result["selected_vertices_back"], result["objective_value_back"], 
                       result["processed_nodes_back"], result["tempo_back"], result["best_objective_value_heur"],
-                      result["all_objective_value_heur"], result["total_time_heur"]
+                      result["all_objective_value_heur"], result["total_time_heur"], result["happy_heur"], result["colored_heur"]
                     ])
         
         
@@ -255,7 +257,7 @@ def save_results_to_excel(results, log_folder, filename="results.xlsx"):
 
 # Função para criar a pasta de logs
 def create_log_folder():
-    log_folder = r'C:\Users\Gio Faletti\Documents\GioPosEscola\ic\color_graphs\maxsetsolucaobruta\pasta\logs'
+    log_folder = '/home/aluno/giotemp/IC-PARTE2-main/pasta/logs'
     if not os.path.exists(log_folder):
         os.makedirs(log_folder)  # Cria a pasta se não existir
     return log_folder
@@ -280,7 +282,6 @@ def get_k_values(num_vertices):
    #     k_values.insert(0, k)  
 
     return sorted(k_values)
-
 # Função para obter arquivos em uma pasta com uma extensão específica
 def get_files_in_folder(folder_path, extension=".txt"):
     files = [f for f in os.listdir(folder_path) if f.endswith(extension)]
@@ -305,10 +306,10 @@ def process_files_in_folder(folder_path):
         limit = 600#passar isso como parametro da file?
         seed = 10#passar isso como parametro da file?
         for k in kvalues:
-            subprocess.run([r"codigoscpp\\scripttodo.exe", file, str(k), str(limit), str(seed)])
+            subprocess.run(['wine codigoscpp/scripttodolinux.exe', file, str(k), str(limit), str(seed)],shell=True)
             # Nome da instância (arquivo sem extensão)
             instance_name = os.path.basename(file)
-            nodes_processed,time_spent,answer_back, happy_back,colored_back,answer_heur, answers_heur, time_heur = read_data_giovanni("resultcpp.txt")
+            nodes_processed,time_spent,answer_back, happy_back,colored_back,answer_heur, answers_heur, time_heur, happy_heur, colored_heur = read_data_giovanni("/home/aluno/giotemp/IC-PARTE2-main/resultcpp.txt")
             # Calcular os valores de k a serem testados
 
             # Resolver o problema para os valores de k calculados
@@ -371,7 +372,9 @@ def process_files_in_folder(folder_path):
                 "tempo_back": time_spent,
                 "best_objective_value_heur": answer_heur,
                 "all_objective_value_heur": str(answers_heur),
-                "total_time_heur": time_heur
+                "total_time_heur": time_heur,
+                "happy_heur": str(happy_heur),
+                "colored_heur": str(colored_heur)
 
 
                 # "selected_vertices_ben_aut": str(selected_vertices_ben_aut),
@@ -395,6 +398,8 @@ def read_data_giovanni(path):
     answers_heur = []
     marker = 0
     tempo_heur = 0
+    happy_heur = []
+    colored_heur = []
     with open(path, 'r') as file:
         first_line = file.readline()
         for i in range(len(first_line)):
@@ -407,20 +412,24 @@ def read_data_giovanni(path):
         for line in file:
             if line == "vasco\n":
                 continue
-            if (line[0] == "h"):
-                happy_back+=[int(line[2:])]
-            if (line[0] == "c"):
-                colored_back+=[int(line[2:])]
-            if (line[0] == "v"):
-                answers_heur+= [int(line[2:])]
-            if (line[0] != "h" and line[0] != "c" and line[0]!= "v" and marker == 1):
-                tempo_heur= int(line)
-            if (line[0] != "h" and line[0] != "c" and line[0]!= "v" and (marker == 0)):
+            if (line[0] == "h" and marker == 0):
+                happy_back+=[int(line[2:].strip())]
+            if (line[0] == "c" and marker == 0):
+                colored_back+=[int(line[2:].strip())]
+            if (line[0] == "h" and marker == 1):
+                happy_heur+=[int(line[2:].strip())]
+            if (line[0] == "c" and marker == 1):
+                colored_heur+=[int(line[2:].strip())]
+            if (line[0] == "r"):
+                answers_heur+= [int(line[2:].strip())]
+            if (line[0] != "h" and line[0] != "c" and line[0]!= "r" and marker == 1):
+                tempo_heur= int(line.strip())
+            if (line[0] != "h" and line[0] != "c" and line[0]!= "r" and (marker == 0)):
                 marker = 1
-                answer_heur = int(line)
+                answer_heur = int(line.strip())
         
     file.close()
-    return (nodes_processed,time_spent,answer_back, happy_back,colored_back,answer_heur,answers_heur,tempo_heur)
+    return (nodes_processed,time_spent,answer_back, happy_back,colored_back,answer_heur,answers_heur,tempo_heur, happy_heur,colored_heur)
 # Caminho da pasta com os arquivos
 #folder_path = '/home/rafael/Documents/HappySet/MIHS/inputs/happygen/output/testes/testes_cp_benders'
 # folder_path ='/home/rafael/Documents/HappySet/MIHS/inputs/happygen/output/testes/7-10'
@@ -428,7 +437,7 @@ def read_data_giovanni(path):
 # Chama a função para processar os arquivos da pasta
 #process_files_in_folder(folder_path)
 # Caminho da pasta com os arquivos
-folder_path = 'pasta'
+folder_path = "/home/aluno/giotemp/IC-PARTE2-main/pasta"
 # folder_path ='/home/rafael/Documents/HappySet/MIHS/inputs/happygen/output/testes/7-10'
 
 # Chama a função para processar os arquivos da pasta
