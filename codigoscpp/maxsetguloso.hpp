@@ -12,9 +12,9 @@ typedef vector<vector<int>> grafo;
 
 
 //preco = pre colored, numco = numero de cores, nvert = numero de vertices
-int BT (grafo g, vector<int>custos, int k, unordered_set<int> f,int seed);
+pair<int,pair<unordered_set<int>,unordered_set<int>>>  BT (grafo g, vector<int>custos, int k, unordered_set<int> f,int seed);
 
-int felicidade_maxima(grafo g,vector<int> custos, int k, int seed);
+pair<int,pair<unordered_set<int>,unordered_set<int>>>  felicidade_maxima(grafo g,vector<int> custos, int k, int seed);
 
 
 #endif

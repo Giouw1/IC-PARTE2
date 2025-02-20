@@ -3,7 +3,7 @@
 #include "gera_grafos.hpp"
 #include "maxsetguloso.hpp"
 //randomizar isso daqui
-int BT (grafo g, vector<int>custos, int k, unordered_set<int> f,int seed){
+pair<int,pair<unordered_set<int>,unordered_set<int>>> BT (grafo g, vector<int>custos, int k, unordered_set<int> f,int seed){
     vector<int> candidato(0);
     int graumin;
     int resposta = 0;
@@ -50,7 +50,7 @@ int BT (grafo g, vector<int>custos, int k, unordered_set<int> f,int seed){
         }
         if (k<0){
             resposta-=1;
-            return resposta;
+            return {resposta,{}};
         }
         happy.insert(v);
 
@@ -74,10 +74,10 @@ int BT (grafo g, vector<int>custos, int k, unordered_set<int> f,int seed){
             f.erase(v);
         }
 
-        return resposta;
+        return {resposta,{happy,coloridos}};
     }
 
-int felicidade_maxima(grafo g,vector<int> custos, int k,int seed){
+pair<int,pair<unordered_set<int>,unordered_set<int>>> felicidade_maxima (grafo g,vector<int> custos, int k,int seed){
     unordered_set<int> coloriveis;
     vector<int> coloridos(g.size(),0);
     for (int i = 0;i<g.size();i++){
@@ -85,6 +85,11 @@ int felicidade_maxima(grafo g,vector<int> custos, int k,int seed){
     }
     return BT(g,custos,k,coloriveis,seed);
 }
-
+/*int main(){
+    grafo g;
+    vector<int> graus;
+    tie(g,graus) = leitor_grafos("/home/aluno/giotemp/IC-PARTE2-main/pasta/graph_d_regular_k2_p0.3_v100_20241127_083958.txt");
+    cout<<felicidade_maxima(g,graus,40,1)<<endl;
+}*/
 
 

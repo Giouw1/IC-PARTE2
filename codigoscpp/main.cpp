@@ -61,11 +61,13 @@ int main(int argc, char* argv[]) {
     for (int element:coloredback){
         arquivoresult<< "c"<< " "<< element <<endl;
     }
-    vector<int> happyheur;
     int solutionheur = 0;
     int ajuda = 0;
     int maior_tempo=0;
     int menor_tempo=-1;
+    unordered_set<int> selected_heur;
+    unordered_set<int> happyheur;
+    pair<unordered_set<int>,unordered_set<int>> getterheur;
     unordered_set<int> respostas;
     clock_t clock_starte;
     clock_t clock_ende;
@@ -73,7 +75,7 @@ int main(int argc, char* argv[]) {
     for (int i = 0;i<25;i++){//marcar todos os resultados e ver os tempos--total e individual
         ajuda = solutionheur;
         clock_starte = clock();
-        solutionheur = felicidade_maxima(g,graus,k,seed+i);
+        tie(solutionheur,getterheur) = felicidade_maxima(g,graus,k,seed+i);
         clock_ende = clock();
         if((menor_tempo == -1)or menor_tempo>double((clock_end-clock_start)/CLOCKS_PER_SEC)){
             menor_tempo = double((clock_ende-clock_starte)/CLOCKS_PER_SEC);
@@ -86,12 +88,20 @@ int main(int argc, char* argv[]) {
         respostas.insert(solutionheur);
         if (ajuda>solutionheur){
             solutionheur = ajuda; //colocar no arquivo intermediário os dados de tempo e das respostas no geral
+            happyheur = getterheur.first;
+            selected_heur = getterheur.second;
         }
     }
     arquivoresult<<solutionheur<< endl;
     arquivoresult<<tempo<<endl;
+    for (int element: happyheur){
+        arquivoresult<< "h"<< " "<< element <<endl;
+    }
+    for(int element: selected_heur){
+        arquivoresult<< "c"<< " "<< element <<endl;
+    }
     for (int element: respostas){
-        arquivoresult<<"v "<<element<<endl;
+        arquivoresult<<"r"<<" "<<element<<endl;
     }
     arquivoresult.close();
 }
