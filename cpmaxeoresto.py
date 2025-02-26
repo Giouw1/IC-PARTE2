@@ -51,7 +51,7 @@ def maxhs_cp(graph, k, log_file):#comparar
     cpomdl.maximize(objective)
     cpomdl.add_constraint(cpomdl.sum(x) == k)
 
-    cpoptimizer_path = '/home/aluno/cpoptimizer/bin/x86-64_linux/cpoptimizer.exe'
+    cpoptimizer_path = 'C:\\Program Files\\IBM\\ILOG\\CPLEX_Studio2211\\cpoptimizer\\bin\\x64_win64\\cpoptimizer.exe '
 
     start_time = time.time()  # Tempo de início da execução
 
@@ -257,7 +257,7 @@ def save_results_to_excel(results, log_folder, filename="results.xlsx"):
 
 # Função para criar a pasta de logs
 def create_log_folder():
-    log_folder = '/home/aluno/giotemp/IC-PARTE2-main/pasta/logs'
+    log_folder = 'pasta/logs'
     if not os.path.exists(log_folder):
         os.makedirs(log_folder)  # Cria a pasta se não existir
     return log_folder
@@ -296,9 +296,6 @@ def process_files_in_folder(folder_path):
     log_folder = create_log_folder()
     vasco = 0
     for file in files:
-        vasco+=1
-        if vasco == 5:
-            break
         print(f"\nProcessando arquivo: {file}")
         instancia = GraphInstance(file)
         adj_list, precolored, vertices, arestas,kk = instancia.get_data()
@@ -306,10 +303,10 @@ def process_files_in_folder(folder_path):
         limit = 600#passar isso como parametro da file?
         seed = 10#passar isso como parametro da file?
         for k in kvalues:
-            subprocess.run(['wine codigoscpp/scripttodolinux.exe', file, str(k), str(limit), str(seed)],shell=True)
+            subprocess.run(['codigoscpp\\scripttodo.exe', file, str(k), str(limit), str(seed)],shell=True)
             # Nome da instância (arquivo sem extensão)
             instance_name = os.path.basename(file)
-            nodes_processed,time_spent,answer_back, happy_back,colored_back,answer_heur, answers_heur, time_heur, happy_heur, colored_heur = read_data_giovanni("/home/aluno/giotemp/IC-PARTE2-main/resultcpp.txt")
+            nodes_processed,time_spent,answer_back, happy_back,colored_back,answer_heur, answers_heur, time_heur, happy_heur, colored_heur = read_data_giovanni("resultcpp.txt")
             # Calcular os valores de k a serem testados
 
             # Resolver o problema para os valores de k calculados
@@ -384,10 +381,12 @@ def process_files_in_folder(folder_path):
 
             })
                     #coloca em ja usados, o arquivo
+            # Salvar os resultados em um arquivo Excel dentro da pasta CP
+            save_results_to_excel(results, log_folder)
+            results = []
         os.rename(file,f"pasta\\ja_usadas\\{file[6:]}")
 
-    # Salvar os resultados em um arquivo Excel dentro da pasta CP
-    save_results_to_excel(results, log_folder)
+
 def read_data_giovanni(path):
     nodes_processed = 0
     time_spent = 0
@@ -410,8 +409,6 @@ def read_data_giovanni(path):
                         time_spent = int(first_line[i+1:j])
                         answer_back = int(first_line[j+1:])
         for line in file:
-            if line == "vasco\n":
-                continue
             if (line[0] == "h" and marker == 0):
                 happy_back+=[int(line[2:].strip())]
             if (line[0] == "c" and marker == 0):
@@ -422,7 +419,7 @@ def read_data_giovanni(path):
                 colored_heur+=[int(line[2:].strip())]
             if (line[0] == "r"):
                 answers_heur+= [int(line[2:].strip())]
-            if (line[0] != "h" and line[0] != "c" and line[0]!= "r" and marker == 1):
+            if (line[0] != "h" and line[0] != "c" and line[0]!= "r"  and marker == 1):
                 tempo_heur= int(line.strip())
             if (line[0] != "h" and line[0] != "c" and line[0]!= "r" and (marker == 0)):
                 marker = 1
@@ -437,7 +434,7 @@ def read_data_giovanni(path):
 # Chama a função para processar os arquivos da pasta
 #process_files_in_folder(folder_path)
 # Caminho da pasta com os arquivos
-folder_path = "/home/aluno/giotemp/IC-PARTE2-main/pasta"
+folder_path = "pasta"
 # folder_path ='/home/rafael/Documents/HappySet/MIHS/inputs/happygen/output/testes/7-10'
 
 # Chama a função para processar os arquivos da pasta
