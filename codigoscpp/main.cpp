@@ -88,8 +88,11 @@ int main(int argc, char* argv[]) {
         respostas.insert(solutionheur);
         if (ajuda>solutionheur){
             solutionheur = ajuda; //colocar no arquivo intermediário os dados de tempo e das respostas no geral
+        }
+        else{
             happyheur = getterheur.first;
             selected_heur = getterheur.second;
+
         }
     }
     arquivoresult<<solutionheur<< endl;
