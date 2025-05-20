@@ -2,15 +2,24 @@
 #include <iostream>
 #include <fstream>
 #include <cmath>
+#include <random>
 using namespace std;
-
+//Objetivo agora: melhorar a seleção parental
+//Uma opção válida é o GA simples: troca todo mundo à cada iteração
+//Outra opção 
+//Depois, fazer o crossover e a mutação
+//Depois, fazer o replacement
+//Preciso pensar na estratégia ótima dado o problema
 typedef vector<vector<int>> grafo;
+vector<int> selection_algogen(vector<pair<int,vector<int>>> populacao,int numero_selec,int tamanho_pop,int seed= time(0)); //Declaração das funções
+vector<vector<int>> crossover_algogen(vector<pair<int,vector<int>>>populacao, vector<int>selecionados);
 
 //Preciso que a heurística guarde as respostas, vai ser bom para o algo gen: receber os grafos ordenadas tem valor
-grafo algogen(grafo g,vector<unordered_set<int>> h, vector<int> custos, int k, int seed){
+//usar operações de gene em gene na recombinação e mutação: se fosse pegando uma fatia, teria problemas de localidade
+vector<int> algogen(grafo g,vector<unordered_set<int>> h, vector<int> custos, int k, int seed){
      vector<pair<int,vector<int>>> populacao (h.size(), pair<int,vector<int>>(g[0].size(), 0)); //Indivíduo é um vetor de inteiros, com 0 se o vértice é feliz e 1 se o vértice é infeliz
      //Instanciar a população inicial: cada indivíduo é formado de acordo com cada coloração estabelecida em h (gerada pela heurística anterior)
-     srand(seed); //Inicializa os randoms de acordo com a seed, se eu for usar mais para frente
+     mt19937 gen(seed);
      for (int i =0;i<h.size();i++){
           populacao[i].first = h[i].size();
           for (auto it = h[i].begin(); it != h[i].end(); ) {
@@ -21,37 +30,14 @@ grafo algogen(grafo g,vector<unordered_set<int>> h, vector<int> custos, int k, i
      //Começo das iterações do algoritmo genético:
      int iter = 0;
      int tamanho_pop = populacao.size();
+     int selec_por_iter = 12; //Número de indivíduos que serão selecionados para a próxima geração
      while(iter< 100){ //Depois verificação se ele não muda depois de x iterações
           iter++;
-          //Seleção do pai
-          //Por enquanto, vou dar valores quase arbitrários para os pesos dos indivíduos na seleção:
-          //Usar o valor da solução parece ser ruim, pq os valores são próximos: relacionar variação com impuslionar os pesos? - variação + impulsiona 
-          //Colocar os valores tamanho_pop, tamanho_pop-1, para avançar nisso logo e ser mais prático
-          vector<int> selecionados(12); //6 é um número arbitrário, a fim de testes
-          for (int j =0;j<12;j++){
-          int numeroAleatorio = rand() % static_cast<int>(ceil(((tamanho_pop)*(tamanho_pop-1))/2));
-          for (int i =0;i<populacao.size();i++){
-               numeroAleatorio -= tamanho_pop - i;
-               if (numeroAleatorio <0){
-                    selecionados.push_back(i);
-                    }
-               }
-          }
-          //Selecionei os indivíduos: agora é recombinar e mutar e avaliar
-          //Como recombinar
-          //Posso fazer recombinação bit a bit, de forma dinâmica, no sentido de que a probabilidade da primeira recombinação é maior do que a segunda
-          //Não quero dar tanta liberdade de escolha para não ser custoso demais
-          //Começar com a crossover rate
-          float crossover_rate = 0.8;
-          for (int i = 0; i<selecionados.size(); i+=2){
-               if (rand() / float(RAND_MAX)> crossover_rate){//executar o crossover
-
-               }
-               else{
-                    continue;
-               }
-          }
-     }
+          vector<int> selecionados(selec_por_iter); //posição no vetor população dos selecionados
+          vector<vector<int>> offspring(selec_por_iter); //as soluções criadas
+          selecionados = selection_algogen(populacao, selec_por_iter ,tamanho_pop,seed); //Selecionar os indivíduos
+          offspring = crossover_algogen(populacao, selecionados);
+     }//realizar o crossover bit a bit
      //Com a população inicial instanciada, a lógica, agora, é permitir processos seleção, crossover,mutação e reposição.
      //A lógica da seleção é pegar n melhores soluções e realizar crossovers entre elas (e possivelmente mutações): gerando n/2 novos elementos, e após isso repor
      //Parte da solução antiga. Como escolher quem repor? ordenado somente? 
@@ -88,4 +74,45 @@ int evaluate_algogen(vector<int> individuo, grafo g, int k){// Acho que está co
      else{
           return valor;
      }
+}
+vector<int> selection_algogen(vector<pair<int,vector<int>>> populacao,int numero_selec,int tamanho_pop,mt19937 gen){
+     //As soluções são muito próximas, ranking linear parece interessante:dá as probabilidades sem grandes saltos
+     //Logo, primeira opção: ranking linear
+     vector<int> selecionados;
+     vector<double> p_rank_linear(tamanho_pop);
+
+     selecionados.reserve(numero_selec); //
+
+     vector<double> pointers;//ponteiros para o SUS
+     pointers.reserve(numero_selec);
+     //Vou usar a fórmula que PRank = 2-s/u + 2i(s-1)/u(u-1), onde S vou considerar 2: peso para "aumentar" a pressão de seleção
+     //Ranks maiores perto do 0: ordenado do maior para o menor fitness
+     p_rank_linear[0] = 1;
+     for (int i=1; i< tamanho_pop;i++){
+          //CDF decrescente, começa com 1 e tira a probabilidade de i, que é N-i-1/a soma de todas as probabilidades.
+          p_rank_linear[i] = p_rank_linear[i-1] - 2*(tamanho_pop-i-1)/(tamanho_pop*(tamanho_pop-1));
+     }
+     //Agora, samplear os dados usando a SUS e colocar elitismo também.
+     
+     uniform_real_distribution<double> dist(0.0, 1.0 / numero_selec);
+     double start = dist(gen);
+     for (int i =0; i<numero_selec;i++){
+          pointers.push_back(start + i* (1.0/numero_selec));
+     }
+     for (double pointer : pointers){
+          for (int i = p_rank_linear.size()-1; i>=0;i--){
+               if (pointer>p_rank_linear[i]){
+                    continue;
+               }
+               else{
+                    selecionados.push_back(i);
+                    break;
+               }
+          }
+     }
+     return selecionados;
+}
+
+vector<vector<int>> crossover_algogen(vector<pair<int,vector<int>>>populacao, vector<int>selecionados){ 
+
 }
