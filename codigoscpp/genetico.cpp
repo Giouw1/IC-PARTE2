@@ -92,7 +92,7 @@ vector<int> selection_algogen(vector<pair<int,vector<int>>> populacao,int numero
           //CDF decrescente, começa com 1 e tira a probabilidade de i, que é N-i-1/a soma de todas as probabilidades.
           p_rank_linear[i] = p_rank_linear[i-1] - 2*(tamanho_pop-i-1)/(tamanho_pop*(tamanho_pop-1));
      }
-     //Agora, samplear os dados usando a SUS e colocar elitismo também.
+     //Agora, samplear os dados usando a SUS e colocar elitismo também: rever as probabilidades colocando o elitismo, tirando os K primeiros, por exemplo.
      
      uniform_real_distribution<double> dist(0.0, 1.0 / numero_selec);
      double start = dist(gen);
