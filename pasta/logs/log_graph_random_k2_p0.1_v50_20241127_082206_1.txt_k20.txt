@@ -1,0 +1,91 @@
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+CPXPARAM_Preprocessing_Aggregator                0
+CPXPARAM_ClockType                               1
+CPXPARAM_Preprocessing_Presolve                  0
+CPXPARAM_Read_DataCheck                          1
+CPXPARAM_Preprocessing_Reduce                    0
+CPXPARAM_Threads                                 1
+CPXPARAM_Preprocessing_Reformulations            0
+CPXPARAM_MIP_Cuts_Cliques                        -1
+CPXPARAM_Preprocessing_CoeffReduce               0
+CPXPARAM_MIP_Cuts_Covers                         -1
+CPXPARAM_Preprocessing_BoundStrength             0
+CPXPARAM_Preprocessing_Relax                     0
+CPXPARAM_MIP_Cuts_FlowCovers                     -1
+CPXPARAM_MIP_Cuts_Implied                        -1
+CPXPARAM_MIP_Cuts_Gomory                         -1
+CPXPARAM_MIP_Cuts_PathCut                        -1
+CPXPARAM_MIP_Cuts_MIRCut                         -1
+CPXPARAM_MIP_Cuts_ZeroHalfCut                    -1
+CPXPARAM_MIP_Cuts_LiftProj                       -1
+CPXPARAM_MIP_Strategy_HeuristicFreq              -1
+CPXPARAM_TimeLimit                               600
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: none, using 1 thread.
+Root relaxation solution time = 0.00 sec. (5.62 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0       20.0000    50                     20.0000      187         
+      0     2       20.0000    50                     20.0000      187         
+Elapsed time = 0.05 sec. (125.34 ticks, tree = 0.01 MB, solutions = 0)
+*    32    31      integral     0        0.0000       10.0000     1410     --- 
+    139   115        3.1707    41        0.0000       10.0000     3435     --- 
+    420   345        3.6667    39        0.0000        7.8049     6881     --- 
+    841   674        2.4000    35        0.0000        6.4286     9913     --- 
+   1216   955        2.6000    35        0.0000        5.4000    13226     --- 
+   1592  1230        1.8919    37        0.0000        4.6154    16575     --- 
+   1989  1495        cutoff              0.0000        4.0000    19676     --- 
+   2439  1816        0.3333    18        0.0000        3.6667    22701     --- 
+*  2577  1092      integral     0        1.0000        3.6000    23503  260.00%
+   2894  1233        1.5789    38        1.0000        3.2727    25696  227.27%
+   3342  1414        1.0645    31        1.0000        3.0000    28860  200.00%
+   5125  1963        1.7568    37        1.0000        2.2414    40500  124.14%
+Elapsed time = 1.32 sec. (3235.12 ticks, tree = 2.93 MB, solutions = 2)
+   6601  2136        cutoff              1.0000        1.8261    49959   82.61%
+   8072  1834        1.1613    31        1.0000        1.5000    59808   50.00%
+  10145   725    infeasible              1.0000        1.2174    72467   21.74%
+
+Root node processing (before b&c):
+  Real time             =    0.05 sec. (125.30 ticks)
+Sequential b&c:
+  Real time             =    2.82 sec. (6302.83 ticks)
+                          ------------
+Total (root+branch&cut) =    2.87 sec. (6428.14 ticks)
+2025-04-29 09:13:33,206 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 09:13:34,493 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 09:13:37,609 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 09:13:40,992 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 09:13:45,894 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 09:13:47,786 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 09:13:50,769 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 09:13:55,836 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 09:14:05,558 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 09:14:12,558 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 09:14:21,485 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 09:24:21,589 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 09:34:24,970 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 09:44:25,102 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 09:54:28,033 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 10:04:28,139 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 10:14:31,265 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 10:24:31,413 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 10:34:37,686 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 10:44:37,842 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 10:54:39,801 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 11:04:39,955 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 11:14:44,024 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 11:14:44,089 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 11:14:44,542 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 11:14:44,572 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 11:14:44,938 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 11:14:44,967 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 11:14:45,418 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 11:24:45,471 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 11:34:47,638 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 11:44:47,731 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 11:54:49,830 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-30 08:07:17,162 - INFO - Iniciando a otimização com o modelo original.
+2025-04-30 08:17:19,665 - INFO - Iniciando a otimização com CP Optimizer.

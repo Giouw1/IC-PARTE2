@@ -1,0 +1,82 @@
+c FILE /home/rafael/Documents/HappySet/MIHS/inputs/happygen/output/graph_d_regular_k4_p0.3_v20_20241127_081939.txt
+c SOURCE This is a d-regular graph formed for the happy graph colouring problem.
+c DESCRIPTION It was generated using the problem generator of Rhyd Lewis
+c
+c GRAPH STATS
+c Seed                             = -1910723865
+c Number of Nodes                  = 20
+c Number of colours k              = 4
+c Number of pre-assignments        = 6
+c Degree of all vertices           = 6
+c Density                          = 0.315789
+c 
+c The degrees of nodes 1 to 20, respectively, are as follows 
+c [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6] 
+c  
+p edge 20 60 4
+e 1 5
+e 1 10
+e 1 15
+e 1 17
+e 1 19
+e 1 20
+e 2 8
+e 2 15
+e 2 16
+e 2 18
+e 2 19
+e 2 20
+e 3 6
+e 3 10
+e 3 11
+e 3 12
+e 3 13
+e 3 17
+e 4 5
+e 4 7
+e 4 9
+e 4 10
+e 4 17
+e 4 20
+e 5 7
+e 5 12
+e 5 16
+e 5 18
+e 6 8
+e 6 9
+e 6 15
+e 6 18
+e 6 20
+e 7 10
+e 7 13
+e 7 14
+e 7 15
+e 8 9
+e 8 11
+e 8 14
+e 8 19
+e 9 12
+e 9 14
+e 9 17
+e 10 14
+e 10 20
+e 11 13
+e 11 15
+e 11 16
+e 11 17
+e 12 14
+e 12 16
+e 12 19
+e 13 14
+e 13 17
+e 13 19
+e 15 16
+e 16 18
+e 18 19
+e 18 20
+n 5 2
+n 9 4
+n 10 3
+n 11 1
+n 15 1
+n 18 2

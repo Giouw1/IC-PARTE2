@@ -1,0 +1,42 @@
+c FILE /home/rafael/Documents/HappySet/MIHS/inputs/happygen/output/graph_random_k2_p0.2_v10_20241125_164933.txt
+c SOURCE This is a random graph formed for the happy graph colouring problem.
+c DESCRIPTION It was generated using the problem generator of Rhyd Lewis
+c
+c GRAPH STATS
+c Seed                             = -1364864609
+c Number of Nodes                  = 10
+c Edge probability defined by user = 0.5
+c Number of colours k              = 2
+c Number of pre-assignments        = 2
+c Actual density                   = 0.533333
+c 
+c The degrees of nodes 1 to 10, respectively, are as follows 
+c [7, 6, 6, 6, 5, 5, 5, 4, 3, 1] 
+c  
+p edge 10 24 2
+e 1 2
+e 1 3
+e 1 4
+e 1 5
+e 1 6
+e 1 7
+e 1 8
+e 2 3
+e 2 5
+e 2 6
+e 2 7
+e 2 8
+e 3 4
+e 3 5
+e 3 7
+e 3 8
+e 4 6
+e 4 7
+e 4 8
+e 4 9
+e 5 6
+e 5 7
+e 6 9
+e 9 10
+n 2 2
+n 9 1

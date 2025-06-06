@@ -1,0 +1,31 @@
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+CPXPARAM_Preprocessing_Aggregator                0
+CPXPARAM_ClockType                               1
+CPXPARAM_Preprocessing_Presolve                  0
+CPXPARAM_Read_DataCheck                          1
+CPXPARAM_Preprocessing_Reduce                    0
+CPXPARAM_Threads                                 1
+CPXPARAM_Preprocessing_Reformulations            0
+CPXPARAM_MIP_Cuts_Cliques                        -1
+CPXPARAM_Preprocessing_CoeffReduce               0
+CPXPARAM_MIP_Cuts_Covers                         -1
+CPXPARAM_Preprocessing_BoundStrength             0
+CPXPARAM_Preprocessing_Relax                     0
+CPXPARAM_MIP_Cuts_FlowCovers                     -1
+CPXPARAM_MIP_Cuts_Implied                        -1
+CPXPARAM_MIP_Cuts_Gomory                         -1
+CPXPARAM_MIP_Cuts_PathCut                        -1
+CPXPARAM_MIP_Cuts_MIRCut                         -1
+CPXPARAM_MIP_Cuts_ZeroHalfCut                    -1
+CPXPARAM_MIP_Cuts_LiftProj                       -1
+CPXPARAM_MIP_Strategy_HeuristicFreq              -1
+CPXPARAM_TimeLimit                               60
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual infeasibility =             6.000000
+Iteration:     8   Dual objective     =             6.000000
+2025-06-06 14:06:36,121 - INFO - Tempo de execução da LP: 0.0026 segundos
+2025-06-06 14:06:36,124 - INFO - Valor da função objetivo da LP: 6.0000
+2025-06-06 14:06:36,126 - INFO - Valores de y (LP): [0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571]
+2025-06-06 14:06:36,129 - INFO - Valores de h (LP): [0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571]

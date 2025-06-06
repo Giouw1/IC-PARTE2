@@ -1,0 +1,614 @@
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+CPXPARAM_Preprocessing_Aggregator                0
+CPXPARAM_ClockType                               1
+CPXPARAM_Preprocessing_Presolve                  0
+CPXPARAM_Read_DataCheck                          1
+CPXPARAM_Preprocessing_Reduce                    0
+CPXPARAM_Threads                                 1
+CPXPARAM_Preprocessing_Reformulations            0
+CPXPARAM_MIP_Cuts_Cliques                        -1
+CPXPARAM_Preprocessing_CoeffReduce               0
+CPXPARAM_MIP_Cuts_Covers                         -1
+CPXPARAM_Preprocessing_BoundStrength             0
+CPXPARAM_Preprocessing_Relax                     0
+CPXPARAM_MIP_Cuts_FlowCovers                     -1
+CPXPARAM_MIP_Cuts_Implied                        -1
+CPXPARAM_MIP_Cuts_Gomory                         -1
+CPXPARAM_MIP_Cuts_PathCut                        -1
+CPXPARAM_MIP_Cuts_MIRCut                         -1
+CPXPARAM_MIP_Cuts_ZeroHalfCut                    -1
+CPXPARAM_MIP_Cuts_LiftProj                       -1
+CPXPARAM_MIP_Strategy_HeuristicFreq              -1
+CPXPARAM_TimeLimit                               600
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: none, using 1 thread.
+Root relaxation solution time = 0.01 sec. (10.09 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0       50.0000   100                     50.0000      366         
+      0     2       50.0000   100                     50.0000      366         
+Elapsed time = 0.08 sec. (150.22 ticks, tree = 0.01 MB, solutions = 0)
+     61    63       24.9851    67                     48.4462     2780         
+*   121   117      integral     0        4.0000       48.4462     4323     --- 
+    261   249       24.8676    68        4.0000       44.7917     8447     --- 
+*   288   245      integral     0        7.0000       44.7917     8874  539.88%
+    539   475       28.7209    86        7.0000       44.0000    13959  528.57%
+*   773   605      integral     0       10.0000       43.0000    17622  330.00%
+*   774   577      integral     0       11.0000       43.0000    17625  290.91%
+    875   670       28.8462    78       11.0000       42.5893    19093  287.18%
+*  1148   885      integral     0       12.0000       42.0870    23842  250.72%
+   1190   922       41.1304    92       12.0000       42.0337    24394  250.28%
+   1427  1137       25.6098    82       12.0000       41.7778    30175  248.15%
+   1680  1364       33.1818    88       12.0000       41.3333    35841  244.44%
+   1994  1646       21.2500    64       12.0000       40.7333    41158  239.44%
+   2287  1912       25.5224    67       12.0000       40.3000    46632  235.83%
+*  2525  1887      integral     0       15.0000       40.1176    50609  167.45%
+   3493  2736       27.8608    79       15.0000       38.7209    67953  158.14%
+Elapsed time = 1.62 sec. (3259.38 ticks, tree = 1.05 MB, solutions = 6)
+   4671  3764       20.5070    71       15.0000       37.3333    89744  148.89%
+   5909  4834       26.8861    79       15.0000       36.4000   111262  142.67%
+*  6574  4944      integral     0       17.0000       36.0513   122914  112.07%
+   7118  5414       26.4533    75       17.0000       35.7447   132551  110.26%
+   8320  6430       20.8955    67       17.0000       35.1930   149994  107.02%
+   9431  7347       29.6104    77       17.0000       34.6102   163204  103.59%
+  10529  8258       22.7733    75       17.0000       34.2000   177756  101.18%
+  11615  9148       29.5119    84       17.0000       33.9167   196000   99.51%
+  12783 10109       22.9091    66       17.0000       33.5526   211517   97.37%
+  13966 11089       25.2537    67       17.0000       33.2308   226198   95.48%
+* 14401 10930      integral     0       18.0000       33.1429   232825   84.13%
+Elapsed time = 6.19 sec. (12184.72 ticks, tree = 15.02 MB, solutions = 8)
+  15607 11885       19.8636    66       18.0000       32.8788   254658   82.66%
+  16784 12832       22.6133    75       18.0000       32.5926   277930   81.07%
+  18011 13823       20.7681    69       18.0000       32.3529   301005   79.74%
+  19257 14850       20.6250    64       18.0000       32.1481   323771   78.60%
+  20540 15877       25.6000    75       18.0000       32.0000   346915   77.78%
+  21753 16850       28.1647    85       18.0000       31.7778   370382   76.54%
+  22961 17835       24.9315    73       18.0000       31.6346   393192   75.75%
+  24229 18862        cutoff             18.0000       31.4815   416288   74.90%
+  25476 19858       22.3571    70       18.0000       31.2632   439164   73.68%
+* 25753 18713      integral     0       19.0000       31.2444   443580   64.44%
+  26719 19451       24.2973    74       19.0000       31.1538   462091   63.97%
+Elapsed time = 10.86 sec. (21724.66 ticks, tree = 17.27 MB, solutions = 9)
+  27928 20396       26.6579    76       19.0000       31.0000   485403   63.16%
+  29123 21333       26.7470    83       19.0000       30.8333   508917   62.28%
+  30445 22386       26.0526    76       19.0000       30.7532   531267   61.86%
+  31670 23342       20.3175    63       19.0000       30.6429   554121   61.28%
+  32904 24282       23.0143    70       19.0000       30.5455   577176   60.77%
+  34136 25242       21.0000    55       19.0000       30.4000   600492   60.00%
+  35432 26255       25.2874    87       19.0000       30.3030   623173   59.49%
+  36707 27252       25.0617    81       19.0000       30.2069   645701   58.98%
+* 37053 25015      integral     0       20.0000       30.1842   652612   50.92%
+  37919 25656        cutoff             20.0000       30.1154   668781   50.58%
+  39155 26562       25.0811    74       20.0000       30.0000   692641   50.00%
+Elapsed time = 15.57 sec. (31271.53 ticks, tree = 18.10 MB, solutions = 10)
+  40456 27525       25.2895    76       20.0000       29.9221   715273   49.61%
+  41686 28434       27.4247    73       20.0000       29.8519   738025   49.26%
+  42956 29389       24.7467    75       20.0000       29.7931   760760   48.97%
+  44254 30377       26.3529    85       20.0000       29.7260   783827   48.63%
+  45488 31279       27.1333    75       20.0000       29.6042   807100   48.02%
+  46765 32217       20.0476    63       20.0000       29.5063   829968   47.53%
+  48018 33139       23.5385    65       20.0000       29.4444   852790   47.22%
+  49310 34111       20.6452    62       20.0000       29.3770   875507   46.89%
+  50623 35104       20.5672    67       20.0000       29.3103   898075   46.55%
+  51955 36113       22.9851    67       20.0000       29.2174   920365   46.09%
+Elapsed time = 20.29 sec. (40820.75 ticks, tree = 22.10 MB, solutions = 10)
+  53226 37038       26.6438    73       20.0000       29.1429   943350   45.71%
+  54534 37972       20.1304    46       20.0000       29.0714   966363   45.36%
+  55797 38886       21.3088    68       20.0000       29.0000   989290   45.00%
+  57030 39756       23.6111    72       20.0000       28.9870  1013025   44.94%
+  58346 40730       24.7808    73       20.0000       28.9333  1035359   44.67%
+  59701 41755       21.9130    69       20.0000       28.8750  1057430   44.37%
+  61079 42780       26.2877    73       20.0000       28.8000  1080005   44.00%
+  62355 43697       23.4595    74       20.0000       28.7500  1103138   43.75%
+  63677 44640       24.3333    69       20.0000       28.6765  1126228   43.38%
+  65007 45608       23.1408    71       20.0000       28.6133  1149147   43.07%
+Elapsed time = 25.01 sec. (50364.62 ticks, tree = 24.86 MB, solutions = 10)
+  66328 46556       24.4737    76       20.0000       28.5526  1171949   42.76%
+  67713 47600       20.6613    62       20.0000       28.5000  1194126   42.50%
+  69026 48568       24.9375    80       20.0000       28.4615  1216502   42.31%
+  70365 49525       26.8421    76       20.0000       28.4211  1239824   42.11%
+  71709 50464       20.3137    51       20.0000       28.3800  1262667   41.90%
+  73080 51464       23.7222    72       20.0000       28.3333  1284987   41.67%
+  74367 52393       26.0000    76       20.0000       28.2414  1307639   41.21%
+  75770 53401       25.9730    74       20.0000       28.1818  1330126   40.91%
+  77142 54383       26.3012    83       20.0000       28.1522  1352257   40.76%
+  78461 55345        cutoff             20.0000       28.1067  1374704   40.53%
+Elapsed time = 29.74 sec. (59908.67 ticks, tree = 27.79 MB, solutions = 10)
+  79793 56288       22.1714    70       20.0000       28.0678  1397614   40.34%
+  81157 57258       24.3529    68       20.0000       28.0317  1420100   40.16%
+  82517 58188       26.8000    75       20.0000       28.0000  1443879   40.00%
+  83869 59144       22.8947    57       20.0000       28.0000  1467094   40.00%
+  85208 60097       22.0317    63       20.0000       27.9783  1489593   39.89%
+  86597 61091       25.6974    76       20.0000       27.9149  1511786   39.57%
+  87946 62062       22.7857    70       20.0000       27.8611  1534034   39.31%
+  89307 63025       24.9286    70       20.0000       27.8243  1556693   39.12%
+  90735 64036       24.3867    75       20.0000       27.7792  1578829   38.90%
+  92127 65025       24.1667    72       20.0000       27.7368  1601112   38.68%
+Elapsed time = 34.47 sec. (69449.90 ticks, tree = 30.65 MB, solutions = 10)
+  93471 65941       22.7027    74       20.0000       27.7083  1624567   38.54%
+  94847 66913       20.1875    64       20.0000       27.6610  1647341   38.31%
+  96235 67892       26.2500    80       20.0000       27.6316  1669672   38.16%
+  97636 68884       22.2754    69       20.0000       27.6250  1691993   38.12%
+  99012 69832       21.3824    68       20.0000       27.6000  1714863   38.00%
+* 99957 62690      integral     0       21.0000       27.5641  1730328   31.26%
+ 101342 63590       25.5000    72       21.0000       27.5172  1752449   31.03%
+ 102680 64459       22.7500    72       21.0000       27.4930  1774543   30.92%
+ 104056 65363       24.8462    78       21.0000       27.4444  1797140   30.69%
+ 105437 66250        cutoff             21.0000       27.4231  1819432   30.59%
+Elapsed time = 39.05 sec. (78693.65 ticks, tree = 32.74 MB, solutions = 11)
+ 106809 67121       25.0000    70       21.0000       27.3810  1841953   30.39%
+ 108187 68007       23.0400    75       21.0000       27.3448  1864228   30.21%
+ 109475 68821       24.3243    74       21.0000       27.2985  1886839   29.99%
+ 110802 69643       22.4231    78       21.0000       27.2632  1909047   29.82%
+ 112192 70493       25.3514    74       21.0000       27.2222  1931717   29.63%
+ 113576 71361       22.6479    71       21.0000       27.2000  1953973   29.52%
+ 114925 72228        cutoff             21.0000       27.1837  1976184   29.45%
+ 116277 73080       23.0588    68       21.0000       27.1429  1998294   29.25%
+ 117659 73972       25.8000    70       21.0000       27.1081  2020332   29.09%
+ 123178 77353        cutoff             21.0000       27.0000  2112153   28.57%
+Elapsed time = 45.18 sec. (91100.63 ticks, tree = 36.04 MB, solutions = 11)
+ 128730 80793       22.7500    72       21.0000       26.9149  2203060   28.17%
+ 134420 84262       21.7222    72       21.0000       26.7857  2291529   27.55%
+ 140070 87722       25.1333    75       21.0000       26.6800  2380584   27.05%
+ 145786 91123       21.6522    69       21.0000       26.6250  2469944   26.79%
+*151146 77187      integral     0       22.0000       26.5397  2551267   20.63%
+ 151572 77383       22.1831    71       22.0000       26.5263  2558730   20.57%
+ 157307 80179        cutoff             22.0000       26.4000  2646374   20.00%
+ 162844 82778        cutoff             22.0000       26.2895  2735495   19.50%
+ 168416 85308       24.2651    83       22.0000       26.2254  2823506   19.21%
+ 174102 87993       22.8732    71       22.0000       26.1250  2911057   18.75%
+ 179825 90525        cutoff             22.0000       26.0377  2998713   18.35%
+Elapsed time = 64.07 sec. (129251.23 ticks, tree = 38.53 MB, solutions = 12)
+ 185149 92715       24.2973    74       22.0000       26.0000  3092123   18.18%
+ 190784 95198       22.9189    74       22.0000       25.8947  3179777   17.70%
+ 196502 97538       24.1558    77       22.0000       25.8333  3266045   17.42%
+ 202253 99960       22.0145    69       22.0000       25.7500  3352050   17.05%
+ 207891 102206        cutoff             22.0000       25.6761  3439213   16.71%
+ 213608 104434       22.6579    76       22.0000       25.6250  3525948   16.48%
+ 219333 106711       23.8734    79       22.0000       25.5584  3612764   16.17%
+ 225140 108962       24.3380    71       22.0000       25.5000  3698003   15.91%
+ 230878 111141       22.4286    63       22.0000       25.4490  3783035   15.68%
+ 236646 113317       22.3684    76       22.0000       25.3770  3868467   15.35%
+Elapsed time = 82.88 sec. (167405.08 ticks, tree = 45.24 MB, solutions = 12)
+ 242391 115377       23.0000    76       22.0000       25.3333  3953778   15.15%
+ 248063 117269       22.2609    69       22.0000       25.2778  4039734   14.90%
+ 253918 119317       22.9125    80       22.0000       25.2353  4124717   14.71%
+ 259790 121391        cutoff             22.0000       25.1818  4209209   14.46%
+ 265765 123480       23.5000    70       22.0000       25.1333  4292586   14.24%
+ 271723 125486       23.5075    67       22.0000       25.0746  4375964   13.98%
+ 277538 127288       22.8286    70       22.0000       25.0189  4460534   13.72%
+ 282879 128659       23.0649    77       22.0000       25.0000  4554557   13.64%
+ 288515 130323       22.2000    65       22.0000       24.9600  4641095   13.45%
+ 294235 132021        cutoff             22.0000       24.9184  4726615   13.27%
+Elapsed time = 101.63 sec. (205556.03 ticks, tree = 53.81 MB, solutions = 12)
+ 300112 133626        cutoff             22.0000       24.8889  4811515   13.13%
+ 306090 135390       23.2941    68       22.0000       24.8387  4895345   12.90%
+ 312226 137327        cutoff             22.0000       24.8000  4978449   12.73%
+ 318396 139224        cutoff             22.0000       24.7500  5061314   12.50%
+ 324229 140800       24.2162    74       22.0000       24.7317  5145370   12.42%
+ 330465 142615       23.4714    70       22.0000       24.6949  5227936   12.25%
+ 336258 144042       22.6438    73       22.0000       24.6500  5314055   12.05%
+ 342103 145234       22.6286    70       22.0000       24.6207  5400481   11.91%
+*347509 89835      integral     0       23.0000       24.5882  5474193    6.91%
+ 348151 89710       23.3333    72       23.0000       24.5854  5485763    6.89%
+ 353615 88789       23.0132    76       23.0000       24.5270  5576258    6.64%
+Elapsed time = 120.45 sec. (243707.33 ticks, tree = 38.64 MB, solutions = 13)
+ 358932 87773       23.7447    47       23.0000       24.4800  5667603    6.43%
+ 364428 86718        cutoff             23.0000       24.4211  5757689    6.18%
+ 369681 85467        cutoff             23.0000       24.3659  5846974    5.94%
+ 375168 84170        cutoff             23.0000       24.3103  5937322    5.70%
+ 380391 82468        cutoff             23.0000       24.2653  6028805    5.50%
+ 385792 80767        cutoff             23.0000       24.2000  6119593    5.22%
+ 390923 78859       23.0137    73       23.0000       24.1644  6212096    5.06%
+ 396319 76892       23.1343    67       23.0000       24.1111  6302154    4.83%
+ 401878 74786        cutoff             23.0000       24.0141  6390316    4.41%
+ 406839 72560        cutoff             23.0000       24.0000  6487448    4.35%
+Elapsed time = 139.52 sec. (281858.59 ticks, tree = 32.74 MB, solutions = 13)
+ 411736 70212        cutoff             23.0000       24.0000  6582274    4.35%
+ 416854 67569        cutoff             23.0000       23.9365  6673626    4.07%
+ 422195 64600        cutoff             23.0000       23.8824  6761900    3.84%
+ 427600 61567       23.4474    76       23.0000       23.8243  6848653    3.58%
+ 433082 58357        cutoff             23.0000       23.7714  6934627    3.35%
+ 438646 54937        cutoff             23.0000       23.7273  7019078    3.16%
+ 444279 51310        cutoff             23.0000       23.6712  7102168    2.92%
+ 450112 47280       23.4545    66       23.0000       23.6250  7181254    2.72%
+ 455940 43057        cutoff             23.0000       23.5714  7260036    2.48%
+ 461681 38609        cutoff             23.0000       23.5238  7338250    2.28%
+Elapsed time = 158.23 sec. (320009.57 ticks, tree = 21.38 MB, solutions = 13)
+ 467627 33861        cutoff             23.0000       23.4667  7412645    2.03%
+ 473757 28746       23.1636    55       23.0000       23.4000  7482898    1.74%
+ 479905 23396        cutoff             23.0000       23.3333  7552390    1.45%
+ 486466 17351        cutoff             23.0000       23.2500  7610511    1.09%
+ 493201 10973        cutoff             23.0000       23.1765  7663048    0.77%
+ 500727  3591        cutoff             23.0000       23.0755  7697959    0.33%
+
+Root node processing (before b&c):
+  Real time             =    0.08 sec. (150.22 ticks)
+Sequential b&c:
+  Real time             =  169.47 sec. (345148.39 ticks)
+                          ------------
+Total (root+branch&cut) =  169.55 sec. (345298.61 ticks)
+2025-05-09 10:00:42,242 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 10:10:42,299 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 10:17:40,810 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 10:27:40,885 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 10:37:43,235 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 10:47:43,324 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 10:57:45,094 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 11:07:45,165 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 11:17:46,857 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 11:27:46,972 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 11:37:48,088 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 11:47:48,203 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 11:57:49,786 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 12:07:49,904 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 12:17:51,089 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 12:27:51,159 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 12:28:10,506 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 12:38:10,561 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 12:38:35,238 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 12:48:35,289 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 12:49:29,297 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 12:51:14,765 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 12:51:15,683 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 12:54:11,854 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 12:54:12,619 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 12:56:29,863 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 12:56:30,662 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 12:56:30,687 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 12:56:31,306 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 12:56:31,331 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 12:56:31,961 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 12:56:31,989 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 12:56:32,599 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 13:06:32,739 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 13:16:33,856 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 13:26:33,999 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 13:36:35,996 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 13:46:36,135 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 13:56:37,829 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 13:56:38,826 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 13:56:41,239 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 13:56:44,452 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 13:56:49,765 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 13:56:52,667 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 13:56:58,511 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 13:56:58,550 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 13:56:59,195 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 13:56:59,219 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 13:56:59,849 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 13:56:59,874 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 13:57:00,498 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 14:07:00,542 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 14:17:03,507 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 14:27:03,551 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 14:37:06,742 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 14:47:06,811 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 14:57:10,181 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 15:07:10,819 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 15:17:12,113 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 15:27:12,769 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 15:37:14,004 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 15:47:14,659 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 15:57:16,024 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 15:57:16,074 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 15:57:16,715 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 15:57:16,748 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 15:57:17,432 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 15:57:17,469 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 15:57:18,108 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 16:07:18,168 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 16:17:19,949 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 16:27:20,010 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 16:37:21,888 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 16:47:21,947 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 16:57:23,981 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 17:07:24,059 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 17:17:27,420 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 17:27:27,557 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 17:37:30,637 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 17:47:30,701 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 17:57:34,061 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 17:59:54,095 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 17:59:55,029 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 18:04:04,595 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 18:04:05,822 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 18:09:42,003 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 18:09:43,940 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 18:19:43,999 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 18:29:47,046 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 18:39:47,110 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 18:49:50,310 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 18:59:50,390 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 19:09:53,506 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 19:19:53,573 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 19:29:56,661 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 19:39:56,731 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 19:49:59,810 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 19:59:59,850 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 20:10:02,956 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 20:10:03,466 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 20:10:05,065 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 20:10:06,744 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 20:10:13,310 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 20:10:14,920 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 20:10:19,584 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 20:20:19,804 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 20:30:21,891 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 20:40:22,139 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 20:50:24,173 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 21:00:24,434 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 21:10:26,645 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 21:20:26,795 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 21:30:27,851 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 21:40:28,026 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 21:50:29,580 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 22:00:29,757 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 22:10:30,902 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 22:20:30,957 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 22:30:33,986 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 22:40:34,039 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 22:50:37,271 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 23:00:37,353 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 23:10:40,492 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 23:12:00,021 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 23:12:01,034 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 23:14:37,298 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 23:14:38,298 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 23:18:33,409 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 23:18:34,512 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 23:28:34,634 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 23:38:35,748 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-09 23:48:35,874 - INFO - Iniciando a otimização com o modelo original.
+2025-05-09 23:58:37,740 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 00:08:37,879 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 00:18:39,826 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 00:28:39,912 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 00:28:49,320 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 00:38:49,403 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 00:38:57,368 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 00:48:57,442 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 00:49:09,810 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 00:59:09,932 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 01:09:11,431 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 01:19:11,524 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 01:29:12,818 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 01:39:12,937 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 01:49:14,122 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 01:50:34,123 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 01:50:35,059 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 01:52:47,945 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 01:52:48,908 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 01:55:05,165 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 01:55:06,388 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 01:55:06,421 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 01:55:07,075 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 01:55:07,110 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 01:55:07,772 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 01:55:07,807 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 01:55:08,508 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 02:05:08,559 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 02:08:36,271 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 02:18:36,348 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 02:28:39,070 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 02:38:39,149 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 02:42:53,210 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 02:52:53,305 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 03:02:54,743 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 03:12:54,844 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 03:22:57,368 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 03:32:57,463 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 03:42:59,253 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 03:52:59,309 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 04:03:01,724 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 04:13:01,809 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 04:23:04,232 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 04:33:04,319 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 04:43:06,828 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 04:53:06,921 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 05:03:08,980 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 05:13:09,105 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 05:23:10,935 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 05:33:11,024 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 05:43:13,376 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 05:53:13,534 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 06:03:14,647 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 06:13:14,804 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 06:23:15,866 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 06:33:16,023 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 06:43:17,110 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 06:53:17,189 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 06:55:01,784 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 07:05:01,869 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 07:15:04,729 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 07:25:04,810 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 07:35:08,027 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 07:45:09,293 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 07:55:10,687 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 08:05:11,905 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 08:15:12,907 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 08:25:14,115 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 08:35:15,528 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 08:45:15,636 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 08:55:17,455 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 09:05:17,565 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 09:15:19,669 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 09:25:19,787 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 09:35:22,033 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 09:35:22,063 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 09:35:22,790 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 09:35:22,816 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 09:35:23,488 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 09:35:23,514 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 09:35:24,222 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 09:45:24,374 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 09:55:25,436 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 10:05:25,619 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 10:15:27,555 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 10:25:27,741 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 10:35:29,686 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 10:45:29,840 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 10:55:31,217 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 11:05:31,383 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 11:15:32,526 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 11:25:32,688 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 11:35:33,770 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 11:45:33,859 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 11:48:46,698 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 11:58:46,778 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 12:00:06,447 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 12:10:06,529 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 12:20:09,503 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 12:30:09,585 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 12:40:11,791 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 12:50:11,848 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 13:00:14,302 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 13:10:14,388 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 13:20:16,855 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 13:30:17,027 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 13:40:18,743 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 13:50:18,920 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 14:00:20,832 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 14:10:20,967 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 14:20:22,825 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 14:30:22,909 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 14:31:03,289 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 14:41:03,379 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 14:51:05,691 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 15:01:05,780 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 15:01:25,890 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 15:11:25,975 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 15:21:28,465 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 15:31:28,527 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 15:41:31,195 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 15:51:31,283 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 16:01:33,525 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 16:11:33,605 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 16:21:36,072 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 16:31:36,154 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 16:41:38,631 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 16:51:38,717 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 17:01:41,149 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 17:11:41,200 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 17:21:44,427 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 17:31:44,511 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 17:41:47,775 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 17:51:47,820 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 18:01:51,067 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 18:01:51,710 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 18:01:53,683 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 18:01:54,786 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 18:01:59,409 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 18:02:01,190 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 18:02:05,815 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 18:12:05,865 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 18:22:08,250 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 18:32:08,335 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 18:42:10,813 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 18:52:10,895 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 19:02:13,315 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 19:12:13,369 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 19:16:36,245 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 19:26:36,299 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 19:28:44,539 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 19:38:44,589 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 19:40:20,971 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 19:50:21,040 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 20:00:23,244 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 20:10:23,337 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 20:20:25,941 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 20:30:26,037 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 20:40:28,510 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 20:50:28,693 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 21:00:30,207 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 21:10:30,452 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 21:20:32,211 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 21:30:32,386 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 21:40:34,111 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 21:50:34,169 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 21:51:03,299 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 22:01:03,349 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 22:02:28,418 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 22:12:28,509 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 22:21:55,068 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 22:31:55,256 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 22:41:56,347 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 22:51:56,544 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 23:01:57,678 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 23:11:57,870 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 23:21:59,361 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 23:31:59,509 - INFO - Iniciando a otimização com o modelo original.
+2025-05-10 23:42:01,665 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-10 23:52:01,820 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 00:02:03,836 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 00:12:03,994 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 00:22:05,381 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 00:32:05,464 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 00:42:07,685 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 00:52:07,735 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 01:02:09,876 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 01:12:09,966 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 01:22:12,537 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 01:32:12,606 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 01:32:21,401 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 01:42:21,446 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 01:42:32,519 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 01:52:32,595 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 01:52:41,838 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 02:02:43,140 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 02:12:44,443 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 02:22:45,708 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 02:32:47,116 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 02:42:48,398 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 02:52:49,800 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 02:52:49,861 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 02:52:50,612 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 02:52:50,639 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 02:52:51,345 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 02:52:51,373 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 02:52:52,130 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 03:02:52,165 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 03:03:00,251 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 03:13:00,325 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 03:13:10,008 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 03:23:10,085 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 03:23:19,689 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 03:33:19,784 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 03:43:21,844 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 03:53:21,942 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 04:03:24,567 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 04:13:24,667 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 04:23:26,793 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 04:33:26,914 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 04:43:28,820 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 04:53:28,903 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 05:03:31,184 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 05:13:31,306 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 05:23:33,602 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 05:25:16,747 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 05:25:17,771 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 05:30:48,207 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 05:30:49,570 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 05:32:32,238 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 05:32:33,204 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 05:42:33,345 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 05:52:34,553 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 06:02:34,725 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 06:12:36,738 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 06:22:36,880 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 06:32:38,421 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 06:42:38,584 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 06:52:40,643 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 07:02:40,834 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 07:12:43,412 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 07:22:43,586 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 07:32:46,025 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 07:42:46,122 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 07:46:46,472 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 07:56:46,561 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 07:58:53,165 - INFO - Iniciando a otimização com CP Optimizer.
+2025-05-11 08:08:53,260 - INFO - Iniciando a otimização com o modelo original.
+2025-05-11 08:08:58,312 - INFO - Iniciando a otimização com CP Optimizer.

@@ -1,0 +1,313 @@
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+CPXPARAM_Preprocessing_Aggregator                0
+CPXPARAM_ClockType                               1
+CPXPARAM_Preprocessing_Presolve                  0
+CPXPARAM_Read_DataCheck                          1
+CPXPARAM_Preprocessing_Reduce                    0
+CPXPARAM_Threads                                 1
+CPXPARAM_Preprocessing_Reformulations            0
+CPXPARAM_MIP_Cuts_Cliques                        -1
+CPXPARAM_Preprocessing_CoeffReduce               0
+CPXPARAM_MIP_Cuts_Covers                         -1
+CPXPARAM_Preprocessing_BoundStrength             0
+CPXPARAM_Preprocessing_Relax                     0
+CPXPARAM_MIP_Cuts_FlowCovers                     -1
+CPXPARAM_MIP_Cuts_Implied                        -1
+CPXPARAM_MIP_Cuts_Gomory                         -1
+CPXPARAM_MIP_Cuts_PathCut                        -1
+CPXPARAM_MIP_Cuts_MIRCut                         -1
+CPXPARAM_MIP_Cuts_ZeroHalfCut                    -1
+CPXPARAM_MIP_Cuts_LiftProj                       -1
+CPXPARAM_MIP_Strategy_HeuristicFreq              -1
+CPXPARAM_TimeLimit                               600
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: none, using 1 thread.
+Root relaxation solution time = 0.00 sec. (7.76 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0       50.0000   100                     50.0000      325         
+      0     2       50.0000   100                     50.0000      325         
+Elapsed time = 0.06 sec. (121.44 ticks, tree = 0.01 MB, solutions = 0)
+     35    37       36.7089    79                     49.0000     2556         
+*    94    87      integral     0       12.0000       49.0000     4203  308.33%
+*   174   158      integral     0       13.0000       48.8727     6427  275.94%
+    311   282       31.6000    80       13.0000       41.1585     9362  216.60%
+    570   513       36.2195    82       13.0000       39.1875    15108  201.44%
+    894   805       14.0000    10       13.0000       38.5055    20677  196.20%
+*   895   768      integral     0       14.0000       38.5055    20702  175.04%
+*   929   661      integral     0       18.0000       38.4615    21901  113.68%
+*  1067   718      integral     0       19.0000       38.1176    24573  100.62%
+   1324   936       23.2471    85       19.0000       37.5556    30263   97.66%
+   1606  1171       20.1176    68       19.0000       37.2381    35967   95.99%
+   1884  1401       30.9213    89       19.0000       36.8333    41726   93.86%
+   2941  2253       23.6923    65       19.0000       35.1724    64690   85.12%
+Elapsed time = 1.50 sec. (3001.99 ticks, tree = 0.90 MB, solutions = 5)
+   4081  3164       24.6410    78       19.0000       33.5610    87701   76.64%
+   5246  4087        cutoff             19.0000       32.5000   110746   71.05%
+   6440  5038       24.0789    76       19.0000       31.6406   134013   66.53%
+   7683  5994       20.4531    64       19.0000       31.0857   156703   63.61%
+   8978  6983       20.2121    66       19.0000       30.6522   179514   61.33%
+  10270  7972       19.0909    66       19.0000       30.3429   202309   59.70%
+  11564  8956       24.6528    72       19.0000       30.0000   225422   57.89%
+* 11748  8468      integral     0       20.0000       30.0000   228474   50.00%
+  12857  9281       28.1818    77       20.0000       29.7872   248337   48.94%
+  14156 10227       26.3636    77       20.0000       29.5000   271659   47.50%
+  15443 11148       25.8026    76       20.0000       29.2000   294712   46.00%
+Elapsed time = 6.54 sec. (12544.64 ticks, tree = 4.23 MB, solutions = 6)
+  16732 12062       24.9167    72       20.0000       29.0000   317746   45.00%
+  18093 13021       26.7105    76       20.0000       28.8462   341021   44.23%
+  19362 13900       22.3030    66       20.0000       28.6567   364404   43.28%
+  20665 14832       26.4000    80       20.0000       28.5000   387334   42.50%
+  22009 15778        cutoff             20.0000       28.3077   410519   41.54%
+  23350 16721        cutoff             20.0000       28.1791   432965   40.90%
+  24729 17680       26.0519    77       20.0000       28.0328   455500   40.16%
+  26133 18637       20.9706    68       20.0000       27.9437   476411   39.72%
+  27577 19633       25.6267    75       20.0000       27.7895   496317   38.95%
+  28987 20588       22.6875    64       20.0000       27.6923   516818   38.46%
+Elapsed time = 11.38 sec. (22087.43 ticks, tree = 7.95 MB, solutions = 6)
+  30470 21606       21.8382    68       20.0000       27.5821   536921   37.91%
+  31940 22613       21.6818    66       20.0000       27.4324   556767   37.16%
+  33436 23621       23.3333    72       20.0000       27.3478   576654   36.74%
+  34906 24606       26.1081    74       20.0000       27.2424   596511   36.21%
+  36373 25604       22.7027    74       20.0000       27.1765   616209   35.88%
+  37896 26615       22.0563    71       20.0000       27.0667   635690   35.33%
+  39351 27560       20.3750    64       20.0000       27.0000   656828   35.00%
+  40803 28485       25.0274    73       20.0000       26.9565   677759   34.78%
+  42299 29483       23.3143    70       20.0000       26.8571   697395   34.29%
+  43869 30536       21.9048    63       20.0000       26.7647   716650   33.82%
+Elapsed time = 16.07 sec. (31627.06 ticks, tree = 11.15 MB, solutions = 6)
+  45378 31521       22.5882    68       20.0000       26.6800   736635   33.40%
+  46853 32474       21.4179    67       20.0000       26.6491   756426   33.25%
+  48416 33480       22.8500    60       20.0000       26.5833   776644   32.92%
+  49966 34481       22.7612    67       20.0000       26.5143   795888   32.57%
+  51513 35482       22.8261    69       20.0000       26.4490   815386   32.24%
+* 52582 31720      integral     0       21.0000       26.4286   828473   25.85%
+* 52978 25009      integral     0       22.0000       26.4000   834080   20.00%
+  53034 25040        cutoff             22.0000       26.4000   834690   20.00%
+  54461 25703       23.3651    63       22.0000       26.3158   854361   19.62%
+  55953 26377       24.4110    73       22.0000       26.2500   873098   19.32%
+  57391 27045        cutoff             22.0000       26.1818   891968   19.01%
+  58837 27676       24.5479    73       22.0000       26.0909   910677   18.60%
+Elapsed time = 20.77 sec. (41168.82 ticks, tree = 11.60 MB, solutions = 8)
+  60251 28291        cutoff             22.0000       26.0000   930079   18.18%
+  61629 28846       23.3770    61       22.0000       26.0000   952014   18.18%
+  62965 29390       23.6522    69       22.0000       25.9615   972397   18.01%
+  64389 29960       22.1918    73       22.0000       25.8936   991526   17.70%
+  65900 30597       23.6883    77       22.0000       25.8500  1010109   17.50%
+  67351 31189       22.6154    65       22.0000       25.7813  1028825   17.19%
+  68820 31754       24.5070    71       22.0000       25.7143  1047463   16.88%
+  70254 32305       23.0137    73       22.0000       25.6667  1066989   16.67%
+  71756 32848       23.2941    68       22.0000       25.6136  1086224   16.43%
+  73229 33382       23.4706    68       22.0000       25.5593  1105217   16.18%
+Elapsed time = 25.46 sec. (50708.76 ticks, tree = 13.44 MB, solutions = 8)
+  74649 33839        cutoff             22.0000       25.5111  1124562   15.96%
+  76107 34372       23.8730    63       22.0000       25.4815  1143449   15.82%
+  77585 34897       23.6842    76       22.0000       25.4200  1162521   15.55%
+  79052 35369       23.6250    72       22.0000       25.3636  1181180   15.29%
+  80466 35827       22.1935    62       22.0000       25.3333  1200874   15.15%
+  82002 36318       23.8333    72       22.0000       25.2778  1219713   14.90%
+  83541 36797        cutoff             22.0000       25.2464  1238627   14.76%
+  85003 37204       22.7424    66       22.0000       25.1951  1257754   14.52%
+  86489 37612        cutoff             22.0000       25.1429  1276509   14.29%
+  87973 37996       23.1972    71       22.0000       25.1053  1295402   14.11%
+Elapsed time = 30.16 sec. (60249.08 ticks, tree = 14.92 MB, solutions = 8)
+  89514 38448       22.8358    67       22.0000       25.0526  1314100   13.88%
+  90939 38835       22.3333    66       22.0000       25.0000  1333866   13.64%
+  92246 39102        cutoff             22.0000       25.0000  1356330   13.64%
+  93594 39431        cutoff             22.0000       25.0000  1377252   13.64%
+  95044 39770       23.0137    73       22.0000       24.9375  1396961   13.35%
+  96527 40105       22.3548    62       22.0000       24.9016  1416291   13.19%
+  98079 40438       23.9286    70       22.0000       24.8852  1435149   13.11%
+  99580 40764       23.5075    67       22.0000       24.8358  1454485   12.89%
+ 101097 41114       24.0909    77       22.0000       24.7917  1473719   12.69%
+ 102671 41464       22.3889    72       22.0000       24.7500  1492512   12.50%
+Elapsed time = 34.82 sec. (69787.33 ticks, tree = 16.04 MB, solutions = 8)
+ 104201 41789       22.7042    71       22.0000       24.7123  1511436   12.33%
+ 105641 42021       22.0822    73       22.0000       24.6721  1531508   12.15%
+ 107070 42204        cutoff             22.0000       24.6429  1551822   12.01%
+ 108556 42376       23.4706    68       22.0000       24.6207  1571588   11.91%
+ 110057 42627        cutoff             22.0000       24.5902  1591308   11.77%
+ 111561 42834        cutoff             22.0000       24.5556  1610815   11.62%
+ 113126 43064       22.6567    67       22.0000       24.5333  1629880   11.52%
+ 114692 43260        cutoff             22.0000       24.5000  1649027   11.36%
+ 116234 43487        cutoff             22.0000       24.4706  1668159   11.23%
+ 117757 43667        cutoff             22.0000       24.4286  1687462   11.04%
+Elapsed time = 39.55 sec. (79328.44 ticks, tree = 16.74 MB, solutions = 8)
+ 119295 43872       22.7500    64       22.0000       24.3871  1706561   10.85%
+ 120808 44024        cutoff             22.0000       24.3590  1725913   10.72%
+ 122362 44187       23.5200    75       22.0000       24.3243  1745145   10.57%
+ 123866 44294        cutoff             22.0000       24.2973  1764515   10.44%
+ 125305 44337        cutoff             22.0000       24.2759  1783023   10.34%
+ 126878 44425       23.2143    70       22.0000       24.2424  1801878   10.19%
+ 128436 44528        cutoff             22.0000       24.2000  1820906   10.00%
+ 129909 44543       23.1818    66       22.0000       24.1714  1840266    9.87%
+ 131444 44611        cutoff             22.0000       24.1463  1859527    9.76%
+ 137592 44795       23.0000    64       22.0000       24.0000  1935683    9.09%
+Elapsed time = 45.69 sec. (91731.02 ticks, tree = 17.20 MB, solutions = 8)
+ 143208 44621       22.2812    64       22.0000       24.0000  2019091    9.09%
+ 149146 44288       23.2258    62       22.0000       23.8889  2097031    8.59%
+ 155220 43880       22.9859    71       22.0000       23.8000  2172459    8.18%
+ 161311 43297       22.8732    71       22.0000       23.6923  2248193    7.69%
+ 167224 42376        cutoff             22.0000       23.6216  2325765    7.37%
+ 173188 41347       22.2353    68       22.0000       23.5385  2402513    6.99%
+ 179245 40241       22.7042    71       22.0000       23.4510  2478146    6.60%
+ 185288 38942       22.6957    69       22.0000       23.3415  2553669    6.10%
+ 191314 37215        cutoff             22.0000       23.2759  2628086    5.80%
+ 197286 35333       22.7042    71       22.0000       23.2063  2702698    5.48%
+Elapsed time = 64.38 sec. (129882.17 ticks, tree = 14.14 MB, solutions = 8)
+ 203317 33320        cutoff             22.0000       23.1343  2776093    5.16%
+ 209427 31120        cutoff             22.0000       23.0323  2848149    4.69%
+ 214581 28753        cutoff             22.0000       23.0000  2937219    4.55%
+ 220485 25937        cutoff             22.0000       22.9254  3010493    4.21%
+ 226497 22909        cutoff             22.0000       22.8571  3081054    3.90%
+ 232461 19588        cutoff             22.0000       22.7812  3150796    3.55%
+ 238509 15934       22.1392    79       22.0000       22.6875  3218258    3.12%
+ 244668 11897        cutoff             22.0000       22.5932  3283550    2.70%
+ 251038  7435        cutoff             22.0000       22.5000  3344965    2.27%
+ 257776  1830        cutoff             22.0000       22.1786  3394744    0.81%
+Elapsed time = 82.66 sec. (168032.69 ticks, tree = 3.30 MB, solutions = 8)
+
+Root node processing (before b&c):
+  Real time             =    0.06 sec. (121.39 ticks)
+Sequential b&c:
+  Real time             =   82.99 sec. (169230.46 ticks)
+                          ------------
+Total (root+branch&cut) =   83.05 sec. (169351.86 ticks)
+2025-04-28 20:16:11,651 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-28 20:26:11,705 - INFO - Iniciando a otimização com o modelo original.
+2025-04-28 20:34:13,094 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-28 20:44:13,185 - INFO - Iniciando a otimização com o modelo original.
+2025-04-28 20:48:47,904 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-28 20:58:48,000 - INFO - Iniciando a otimização com o modelo original.
+2025-04-28 21:08:49,857 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-28 21:18:49,915 - INFO - Iniciando a otimização com o modelo original.
+2025-04-28 21:19:45,100 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-28 21:29:45,151 - INFO - Iniciando a otimização com o modelo original.
+2025-04-28 21:29:51,873 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-28 21:39:51,952 - INFO - Iniciando a otimização com o modelo original.
+2025-04-28 21:39:59,593 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-28 21:49:59,641 - INFO - Iniciando a otimização com o modelo original.
+2025-04-28 21:50:14,199 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-28 22:00:14,285 - INFO - Iniciando a otimização com o modelo original.
+2025-04-28 22:10:17,064 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-28 22:20:17,155 - INFO - Iniciando a otimização com o modelo original.
+2025-04-28 22:23:14,010 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-28 22:33:14,075 - INFO - Iniciando a otimização com o modelo original.
+2025-04-28 22:37:51,921 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-28 22:39:03,194 - INFO - Iniciando a otimização com o modelo original.
+2025-04-28 22:39:03,888 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-28 22:47:27,529 - INFO - Iniciando a otimização com o modelo original.
+2025-04-28 22:47:28,507 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-28 22:49:52,228 - INFO - Iniciando a otimização com o modelo original.
+2025-04-28 22:49:52,755 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-28 22:59:52,901 - INFO - Iniciando a otimização com o modelo original.
+2025-04-28 23:09:54,405 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-28 23:19:54,588 - INFO - Iniciando a otimização com o modelo original.
+2025-04-28 23:29:56,119 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-28 23:39:56,282 - INFO - Iniciando a otimização com o modelo original.
+2025-04-28 23:49:57,863 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-28 23:59:57,948 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 00:10:01,072 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 00:20:01,118 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 00:30:04,566 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 00:40:04,655 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 00:50:07,356 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 01:00:07,524 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 01:10:08,540 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 01:20:08,670 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 01:30:09,560 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 01:40:09,742 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 01:50:10,721 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 02:00:10,815 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 02:10:14,046 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 02:20:14,129 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 02:30:16,812 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 02:40:16,900 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 02:50:19,936 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 03:00:20,099 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 03:10:21,149 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 03:20:21,302 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 03:30:22,339 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 03:40:22,516 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 03:50:24,479 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 04:00:24,639 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 04:10:53,455 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 04:20:53,673 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 04:30:56,605 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 04:40:56,722 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 04:51:01,769 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 04:52:44,411 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 04:52:45,257 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 04:54:11,329 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 04:54:12,365 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 05:00:53,167 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 05:00:54,479 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 05:10:54,527 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 05:20:57,729 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 05:30:57,828 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 05:41:00,726 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 05:51:00,807 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 06:01:03,811 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 06:02:50,017 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 06:02:50,839 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 06:06:39,399 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 06:06:40,183 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 06:13:09,687 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 06:13:10,395 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 06:23:10,491 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 06:33:12,282 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 06:43:12,397 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 06:53:14,175 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 07:03:14,288 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 07:13:16,041 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 07:23:16,194 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 07:33:17,420 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 07:43:17,564 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 07:53:18,697 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 08:03:18,865 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 08:13:25,652 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 08:23:25,831 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 08:33:26,822 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 08:43:27,011 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 08:53:27,887 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 09:03:28,072 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 09:13:29,065 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 09:13:29,878 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 09:13:33,206 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 09:13:34,493 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 09:13:37,609 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 09:13:40,992 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 09:13:45,894 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 09:13:47,786 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 09:13:50,769 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 09:13:55,836 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 09:14:05,558 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 09:14:12,558 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 09:14:21,485 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 09:24:21,589 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 09:34:24,970 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 09:44:25,102 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 09:54:28,033 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 10:04:28,139 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 10:14:31,265 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 10:24:31,413 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 10:34:37,686 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 10:44:37,842 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 10:54:39,801 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 11:04:39,955 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 11:14:44,024 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 11:14:44,089 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 11:14:44,542 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 11:14:44,572 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 11:14:44,938 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 11:14:44,967 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 11:14:45,418 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 11:24:45,471 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 11:34:47,638 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-29 11:44:47,731 - INFO - Iniciando a otimização com o modelo original.
+2025-04-29 11:54:49,830 - INFO - Iniciando a otimização com CP Optimizer.
+2025-04-30 08:07:17,162 - INFO - Iniciando a otimização com o modelo original.
+2025-04-30 08:17:19,665 - INFO - Iniciando a otimização com CP Optimizer.

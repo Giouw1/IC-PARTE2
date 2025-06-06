@@ -1,0 +1,62 @@
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+CPXPARAM_Preprocessing_Aggregator                0
+CPXPARAM_ClockType                               1
+CPXPARAM_Preprocessing_Presolve                  0
+CPXPARAM_Read_DataCheck                          1
+CPXPARAM_Preprocessing_Reduce                    0
+CPXPARAM_Threads                                 1
+CPXPARAM_Preprocessing_Reformulations            0
+CPXPARAM_MIP_Cuts_Cliques                        -1
+CPXPARAM_Preprocessing_CoeffReduce               0
+CPXPARAM_MIP_Cuts_Covers                         -1
+CPXPARAM_Preprocessing_BoundStrength             0
+CPXPARAM_Preprocessing_Relax                     0
+CPXPARAM_MIP_Cuts_FlowCovers                     -1
+CPXPARAM_MIP_Cuts_Implied                        -1
+CPXPARAM_MIP_Cuts_Gomory                         -1
+CPXPARAM_MIP_Cuts_PathCut                        -1
+CPXPARAM_MIP_Cuts_MIRCut                         -1
+CPXPARAM_MIP_Cuts_ZeroHalfCut                    -1
+CPXPARAM_MIP_Cuts_LiftProj                       -1
+CPXPARAM_MIP_Strategy_HeuristicFreq              -1
+CPXPARAM_TimeLimit                               5
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: none, using 1 thread.
+Root relaxation solution time = 0.02 sec. (6.55 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0       40.0000   100                     40.0000      364         
+      0     2       40.0000   100                     40.0000      364         
+Elapsed time = 0.19 sec. (263.88 ticks, tree = 0.01 MB, solutions = 0)
+*    73    73      integral     0        7.0000       37.6471     2422  437.82%
+    162   156       26.8916    83        7.0000       37.5758     4777  436.80%
+    526   491       25.3735    83        7.0000       35.8191    11328  411.70%
+    892   824       29.3182    88        7.0000       34.6237    18054  394.62%
+   1253  1157       11.6769    65        7.0000       34.0299    24706  386.14%
+   1651  1522        7.8644    59        7.0000       34.0000    31348  385.71%
+   2024  1860       13.5652    69        7.0000       33.4762    37871  378.23%
+   2407  2209       12.8955    67        7.0000       33.0000    44422  371.43%
+   2802  2567        7.4545    55        7.0000       32.9143    51112  370.20%
+   3187  2918       30.5806    93        7.0000       32.6957    57657  367.08%
+   4733  4329       28.4471    85        7.0000       32.0000    84111  357.14%
+Elapsed time = 2.75 sec. (3367.36 ticks, tree = 1.54 MB, solutions = 1)
+   6273  5734       23.4217    83        7.0000       31.5844   110321  351.21%
+   7860  7173       20.5195    77        7.0000       31.1667   136649  345.24%
+
+Root node processing (before b&c):
+  Real time             =    0.19 sec. (263.85 ticks)
+Sequential b&c:
+  Real time             =    4.83 sec. (5907.18 ticks)
+                          ------------
+Total (root+branch&cut) =    5.02 sec. (6171.02 ticks)
+2025-02-18 23:09:41,702 - INFO - Iniciando a otimização com CP Optimizer.
+2025-02-18 23:09:41,703 - INFO - Iniciando a otimização com CP Optimizer.
+2025-02-18 23:09:46,881 - INFO - Iniciando a otimização com o modelo original.
+2025-02-18 23:09:46,882 - INFO - Iniciando a otimização com o modelo original.
+2025-02-18 23:09:56,981 - INFO - Iniciando a otimização com CP Optimizer.
+2025-02-18 23:09:56,983 - INFO - Iniciando a otimização com CP Optimizer.
+2025-02-18 23:10:02,154 - INFO - Iniciando a otimização com o modelo original.
+2025-02-18 23:10:02,160 - INFO - Iniciando a otimização com o modelo original.

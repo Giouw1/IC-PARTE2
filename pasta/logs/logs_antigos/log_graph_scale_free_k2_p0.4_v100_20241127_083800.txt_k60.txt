@@ -1,0 +1,67 @@
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+CPXPARAM_Preprocessing_Aggregator                0
+CPXPARAM_ClockType                               1
+CPXPARAM_Preprocessing_Presolve                  0
+CPXPARAM_Read_DataCheck                          1
+CPXPARAM_Preprocessing_Reduce                    0
+CPXPARAM_Threads                                 1
+CPXPARAM_Preprocessing_Reformulations            0
+CPXPARAM_MIP_Cuts_Cliques                        -1
+CPXPARAM_Preprocessing_CoeffReduce               0
+CPXPARAM_MIP_Cuts_Covers                         -1
+CPXPARAM_Preprocessing_BoundStrength             0
+CPXPARAM_Preprocessing_Relax                     0
+CPXPARAM_MIP_Cuts_FlowCovers                     -1
+CPXPARAM_MIP_Cuts_Implied                        -1
+CPXPARAM_MIP_Cuts_Gomory                         -1
+CPXPARAM_MIP_Cuts_PathCut                        -1
+CPXPARAM_MIP_Cuts_MIRCut                         -1
+CPXPARAM_MIP_Cuts_ZeroHalfCut                    -1
+CPXPARAM_MIP_Cuts_LiftProj                       -1
+CPXPARAM_MIP_Strategy_HeuristicFreq              -1
+CPXPARAM_TimeLimit                               1
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: none, using 1 thread.
+Root relaxation solution time = 0.00 sec. (6.36 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0       60.0000   100                     60.0000      254         
+      0     2       60.0000   100                     60.0000      254         
+Elapsed time = 0.11 sec. (124.63 ticks, tree = 0.01 MB, solutions = 0)
+     13    15       50.5161    93                     59.0000     1454         
+*   125   118      integral     0       12.0000       59.0000     4916  391.67%
+    158   150       38.9241    79       12.0000       56.9750     6744  374.79%
+*   356   308      integral     0       15.0000       51.8095     9938  245.40%
+    441   389       38.9552    67       15.0000       51.3721    12368  242.48%
+*   501   412      integral     0       17.0000       51.3721    13476  202.19%
+*   631   457      integral     0       22.0000       51.2273    15138  132.85%
+    756   568       46.0759    79       22.0000       51.0638    17914  132.11%
+*   998   723      integral     0       23.0000       50.6667    21867  120.29%
+
+Root node processing (before b&c):
+  Real time             =    0.11 sec. (124.60 ticks)
+Sequential b&c:
+  Real time             =    0.91 sec. (1138.04 ticks)
+                          ------------
+Total (root+branch&cut) =    1.02 sec. (1262.64 ticks)
+2025-02-24 11:57:46,838 - INFO - Iniciando a otimização com CP Optimizer.
+2025-02-24 11:57:47,944 - INFO - Iniciando a otimização com o modelo original.
+2025-02-24 11:57:50,313 - INFO - Iniciando a otimização com CP Optimizer.
+2025-02-24 11:57:51,400 - INFO - Iniciando a otimização com o modelo original.
+2025-02-24 11:57:53,501 - INFO - Iniciando a otimização com CP Optimizer.
+2025-02-24 11:57:54,588 - INFO - Iniciando a otimização com o modelo original.
+2025-02-24 11:57:56,720 - INFO - Iniciando a otimização com CP Optimizer.
+2025-02-24 11:57:57,905 - INFO - Iniciando a otimização com o modelo original.
+2025-02-24 11:57:59,988 - INFO - Iniciando a otimização com CP Optimizer.
+2025-02-24 11:58:01,068 - INFO - Iniciando a otimização com o modelo original.
+2025-02-24 11:58:03,158 - INFO - Iniciando a otimização com CP Optimizer.
+2025-02-24 11:58:04,251 - INFO - Iniciando a otimização com o modelo original.
+2025-02-24 11:58:06,363 - INFO - Iniciando a otimização com CP Optimizer.
+2025-02-24 11:58:07,453 - INFO - Iniciando a otimização com o modelo original.
+2025-02-24 11:58:09,550 - INFO - Iniciando a otimização com CP Optimizer.
+2025-02-24 11:58:10,639 - INFO - Iniciando a otimização com o modelo original.
+2025-02-24 11:58:12,725 - INFO - Iniciando a otimização com CP Optimizer.
+2025-02-24 11:58:13,807 - INFO - Iniciando a otimização com o modelo original.
