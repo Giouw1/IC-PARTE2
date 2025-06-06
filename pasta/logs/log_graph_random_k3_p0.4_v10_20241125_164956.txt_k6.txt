@@ -25,56 +25,56 @@ Initializing dual steep norms . . .
 Iteration log . . .
 Iteration:     1   Dual infeasibility =             9.000000
 Iteration:    11   Dual objective     =             6.000000
-2025-06-06 14:06:34,472 - INFO - Tempo de execução da LP: 0.0047 segundos
-2025-06-06 14:06:34,476 - INFO - Valor da função objetivo da LP: 6.0000
-2025-06-06 14:06:34,480 - INFO - Valores de y (LP): [0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6]
-2025-06-06 14:06:34,483 - INFO - Valores de h (LP): [0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6]
-2025-06-06 14:06:34,637 - INFO - Iniciando a otimização com CP Optimizer.
-2025-06-06 14:06:34,663 - INFO - Iniciando a otimização com o modelo original.
-2025-06-06 14:06:34,690 - INFO - Resolvendo a relaxação linear (LP).
-2025-06-06 14:06:34,695 - INFO - Tempo de execução da LP: 0.0027 segundos
-2025-06-06 14:06:34,699 - INFO - Valor da função objetivo da LP: 8.0000
-2025-06-06 14:06:34,702 - INFO - Valores de y (LP): [0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8]
-2025-06-06 14:06:34,704 - INFO - Valores de h (LP): [0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8]
-2025-06-06 14:06:34,873 - INFO - Iniciando a otimização com CP Optimizer.
-2025-06-06 14:06:34,896 - INFO - Iniciando a otimização com o modelo original.
-2025-06-06 14:06:34,932 - INFO - Resolvendo a relaxação linear (LP).
-2025-06-06 14:06:34,940 - INFO - Tempo de execução da LP: 0.0043 segundos
-2025-06-06 14:06:34,944 - INFO - Valor da função objetivo da LP: 5.0000
-2025-06-06 14:06:34,948 - INFO - Valores de y (LP): [0.7143, 0.7143, 0.7143, 0.7143, 0.7143, 0.7143, 0.7143]
-2025-06-06 14:06:34,952 - INFO - Valores de h (LP): [0.7143, 0.7143, 0.7143, 0.7143, 0.7143, 0.7143, 0.7143]
-2025-06-06 14:06:35,122 - INFO - Iniciando a otimização com CP Optimizer.
-2025-06-06 14:06:35,145 - INFO - Iniciando a otimização com o modelo original.
-2025-06-06 14:06:35,168 - INFO - Resolvendo a relaxação linear (LP).
-2025-06-06 14:06:35,173 - INFO - Tempo de execução da LP: 0.0026 segundos
-2025-06-06 14:06:35,176 - INFO - Valor da função objetivo da LP: 6.0000
-2025-06-06 14:06:35,178 - INFO - Valores de y (LP): [0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571]
-2025-06-06 14:06:35,180 - INFO - Valores de h (LP): [0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571]
-2025-06-06 14:06:35,378 - INFO - Iniciando a otimização com CP Optimizer.
-2025-06-06 14:06:35,404 - INFO - Iniciando a otimização com o modelo original.
-2025-06-06 14:06:35,431 - INFO - Resolvendo a relaxação linear (LP).
-2025-06-06 14:06:35,436 - INFO - Tempo de execução da LP: 0.0027 segundos
-2025-06-06 14:06:35,439 - INFO - Valor da função objetivo da LP: 6.0000
-2025-06-06 14:06:35,441 - INFO - Valores de y (LP): [0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6]
-2025-06-06 14:06:35,444 - INFO - Valores de h (LP): [0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6]
-2025-06-06 14:06:35,590 - INFO - Iniciando a otimização com CP Optimizer.
-2025-06-06 14:06:35,627 - INFO - Iniciando a otimização com o modelo original.
-2025-06-06 14:06:35,668 - INFO - Resolvendo a relaxação linear (LP).
-2025-06-06 14:06:35,677 - INFO - Tempo de execução da LP: 0.0050 segundos
-2025-06-06 14:06:35,681 - INFO - Valor da função objetivo da LP: 8.0000
-2025-06-06 14:06:35,683 - INFO - Valores de y (LP): [0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8]
-2025-06-06 14:06:35,687 - INFO - Valores de h (LP): [0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8]
-2025-06-06 14:06:35,835 - INFO - Iniciando a otimização com CP Optimizer.
-2025-06-06 14:06:35,861 - INFO - Iniciando a otimização com o modelo original.
-2025-06-06 14:06:35,892 - INFO - Resolvendo a relaxação linear (LP).
-2025-06-06 14:06:35,897 - INFO - Tempo de execução da LP: 0.0027 segundos
-2025-06-06 14:06:35,900 - INFO - Valor da função objetivo da LP: 5.0000
-2025-06-06 14:06:35,902 - INFO - Valores de y (LP): [0.7143, 0.7143, 0.7143, 0.7143, 0.7143, 0.7143, 0.7143]
-2025-06-06 14:06:35,904 - INFO - Valores de h (LP): [0.7143, 0.7143, 0.7143, 0.7143, 0.7143, 0.7143, 0.7143]
-2025-06-06 14:06:36,055 - INFO - Iniciando a otimização com CP Optimizer.
-2025-06-06 14:06:36,091 - INFO - Iniciando a otimização com o modelo original.
-2025-06-06 14:06:36,116 - INFO - Resolvendo a relaxação linear (LP).
-2025-06-06 14:06:36,121 - INFO - Tempo de execução da LP: 0.0026 segundos
-2025-06-06 14:06:36,124 - INFO - Valor da função objetivo da LP: 6.0000
-2025-06-06 14:06:36,126 - INFO - Valores de y (LP): [0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571]
-2025-06-06 14:06:36,129 - INFO - Valores de h (LP): [0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571]
+2025-06-06 15:25:31,089 - INFO - Tempo de execução da LP: 0.0029 segundos
+2025-06-06 15:25:31,091 - INFO - Valor da função objetivo da LP: 6.0000
+2025-06-06 15:25:31,093 - INFO - Valores de y (LP): [0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6]
+2025-06-06 15:25:31,095 - INFO - Valores de h (LP): [0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6]
+2025-06-06 15:25:31,279 - INFO - Iniciando a otimização com CP Optimizer.
+2025-06-06 15:25:31,307 - INFO - Iniciando a otimização com o modelo original.
+2025-06-06 15:25:31,335 - INFO - Resolvendo a relaxação linear (LP).
+2025-06-06 15:25:31,340 - INFO - Tempo de execução da LP: 0.0027 segundos
+2025-06-06 15:25:31,343 - INFO - Valor da função objetivo da LP: 8.0000
+2025-06-06 15:25:31,345 - INFO - Valores de y (LP): [0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8]
+2025-06-06 15:25:31,347 - INFO - Valores de h (LP): [0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8]
+2025-06-06 15:25:31,520 - INFO - Iniciando a otimização com CP Optimizer.
+2025-06-06 15:25:31,544 - INFO - Iniciando a otimização com o modelo original.
+2025-06-06 15:25:31,572 - INFO - Resolvendo a relaxação linear (LP).
+2025-06-06 15:25:31,581 - INFO - Tempo de execução da LP: 0.0048 segundos
+2025-06-06 15:25:31,585 - INFO - Valor da função objetivo da LP: 5.0000
+2025-06-06 15:25:31,589 - INFO - Valores de y (LP): [0.7143, 0.7143, 0.7143, 0.7143, 0.7143, 0.7143, 0.7143]
+2025-06-06 15:25:31,593 - INFO - Valores de h (LP): [0.7143, 0.7143, 0.7143, 0.7143, 0.7143, 0.7143, 0.7143]
+2025-06-06 15:25:31,772 - INFO - Iniciando a otimização com CP Optimizer.
+2025-06-06 15:25:31,796 - INFO - Iniciando a otimização com o modelo original.
+2025-06-06 15:25:31,822 - INFO - Resolvendo a relaxação linear (LP).
+2025-06-06 15:25:31,832 - INFO - Tempo de execução da LP: 0.0048 segundos
+2025-06-06 15:25:31,836 - INFO - Valor da função objetivo da LP: 6.0000
+2025-06-06 15:25:31,840 - INFO - Valores de y (LP): [0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571]
+2025-06-06 15:25:31,844 - INFO - Valores de h (LP): [0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571]
+2025-06-06 15:25:32,178 - INFO - Iniciando a otimização com CP Optimizer.
+2025-06-06 15:25:32,206 - INFO - Iniciando a otimização com o modelo original.
+2025-06-06 15:25:32,235 - INFO - Resolvendo a relaxação linear (LP).
+2025-06-06 15:25:32,240 - INFO - Tempo de execução da LP: 0.0027 segundos
+2025-06-06 15:25:32,242 - INFO - Valor da função objetivo da LP: 6.0000
+2025-06-06 15:25:32,244 - INFO - Valores de y (LP): [0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6]
+2025-06-06 15:25:32,246 - INFO - Valores de h (LP): [0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6]
+2025-06-06 15:25:32,426 - INFO - Iniciando a otimização com CP Optimizer.
+2025-06-06 15:25:32,451 - INFO - Iniciando a otimização com o modelo original.
+2025-06-06 15:25:32,479 - INFO - Resolvendo a relaxação linear (LP).
+2025-06-06 15:25:32,485 - INFO - Tempo de execução da LP: 0.0032 segundos
+2025-06-06 15:25:32,487 - INFO - Valor da função objetivo da LP: 8.0000
+2025-06-06 15:25:32,490 - INFO - Valores de y (LP): [0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8]
+2025-06-06 15:25:32,492 - INFO - Valores de h (LP): [0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8]
+2025-06-06 15:25:32,665 - INFO - Iniciando a otimização com CP Optimizer.
+2025-06-06 15:25:32,693 - INFO - Iniciando a otimização com o modelo original.
+2025-06-06 15:25:32,723 - INFO - Resolvendo a relaxação linear (LP).
+2025-06-06 15:25:32,728 - INFO - Tempo de execução da LP: 0.0032 segundos
+2025-06-06 15:25:32,733 - INFO - Valor da função objetivo da LP: 5.0000
+2025-06-06 15:25:32,737 - INFO - Valores de y (LP): [0.7143, 0.7143, 0.7143, 0.7143, 0.7143, 0.7143, 0.7143]
+2025-06-06 15:25:32,742 - INFO - Valores de h (LP): [0.7143, 0.7143, 0.7143, 0.7143, 0.7143, 0.7143, 0.7143]
+2025-06-06 15:25:32,934 - INFO - Iniciando a otimização com CP Optimizer.
+2025-06-06 15:25:32,970 - INFO - Iniciando a otimização com o modelo original.
+2025-06-06 15:25:33,050 - INFO - Resolvendo a relaxação linear (LP).
+2025-06-06 15:25:33,055 - INFO - Tempo de execução da LP: 0.0027 segundos
+2025-06-06 15:25:33,058 - INFO - Valor da função objetivo da LP: 6.0000
+2025-06-06 15:25:33,060 - INFO - Valores de y (LP): [0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571]
+2025-06-06 15:25:33,062 - INFO - Valores de h (LP): [0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571]

@@ -240,7 +240,7 @@ def solve_original_model(lista_viz, k, log_file, log_lp_file):
 
 
 # Função para salvar resultados no Excel na primeira linha disponível
-def save_results_to_excel(results, log_folder, filename="teste_rfael_best_bound.xlsx"):
+def save_results_to_excel(results, log_folder, filename="teste_gamma_range.xlsx"):
     excel_file_path = os.path.join(log_folder, filename)
 
     if os.path.exists(excel_file_path):
@@ -256,7 +256,7 @@ def save_results_to_excel(results, log_folder, filename="teste_rfael_best_bound.
                         "exec_time_orig", "objective_value_orig","best_bound","gap","processed_nodes","happy_vertices_back",
                         "selected_vertices_back","objective_value_back","processed_nodes_back",
                         "tempo_back","validaback","best_objective_value_heur", "all_objective_value_heur", "total_time_heur",
-                        "happy_vertices_heur","colored_vertices_heur","validaheur","gamma"
+                        "happy_vertices_heur","colored_vertices_heur","validaheur","gamma_range", "best_gamma"
                      ])
         row = 2
 
@@ -289,7 +289,7 @@ def save_results_to_excel(results, log_folder, filename="teste_rfael_best_bound.
                       result["happy_vertices_back"], result["selected_vertices_back"], result["objective_value_back"], 
                       result["processed_nodes_back"], result["tempo_back"], result["validaback"],result["best_objective_value_heur"],
                       result["all_objective_value_heur"], result["total_time_heur"], result["happy_heur"], result["colored_heur"],
-                      result["validaheur"], result["gamma"]
+                      result["validaheur"], result["gamma"], result["best_gamma"]
                     ])
         
         
@@ -345,12 +345,13 @@ def process_files_in_folder(folder_path):
         limit = 600#passar isso como parametro da file?
         seed = 10#passar isso como parametro da file?
         n = 50
-        gamma = 1.2
+        gamma = 2
+        #ideia: usar um gamma range
         for k in kvalues:
             subprocess.run(['codigoscpp/scripttodo.exe', file, str(k), str(limit), str(seed),str(n), str(gamma)])
             # Nome da instância (arquivo sem extensão)
             instance_name = os.path.basename(file)
-            nodes_processed,time_spent,answer_back, happy_back,colored_back,answer_heur, answers_heur, time_heur, happy_heur, colored_heur,validaheur,validaback = read_data_giovanni("resultcpp.txt")
+            nodes_processed,time_spent,answer_back, happy_back,colored_back,answer_heur, answers_heur, time_heur, happy_heur, colored_heur,validaheur,validaback,best_gamma = read_data_giovanni("resultcpp.txt")
             
             # nodes_processed = 0
             # time_spent = 0
@@ -447,7 +448,8 @@ def process_files_in_folder(folder_path):
                 "happy_heur": str(happy_heur),
                 "colored_heur": str(colored_heur),
                 "validaheur": validaheur,
-                "gamma": gamma
+                "gamma": gamma,
+                "best_gamma":best_gamma
 
 
                 # "selected_vertices_ben_aut": str(selected_vertices_ben_aut),
@@ -482,6 +484,7 @@ def read_data_giovanni(path):
     colored_heur = []
     validaheur = 1
     validaback = 1
+    best_gamma = 0.0
     with open(path, 'r') as file:
         first_line = file.readline()
         for i in range(len(first_line)):
@@ -504,6 +507,9 @@ def read_data_giovanni(path):
             if line.strip() == "OKB":
                 validaback = 1
                 continue
+            if (line[0] == "b" and line[1] == "g"):
+                best_gamma = float(line[2:].strip())
+                continue
             if (line[0] == "h" and marker == 0):
                 happy_back+=[int(line[2:].strip())]
             if (line[0] == "c" and marker == 0):
@@ -521,7 +527,7 @@ def read_data_giovanni(path):
                 answer_heur = int(line.strip())
         
     file.close()
-    return (nodes_processed,time_spent,answer_back, happy_back,colored_back,answer_heur,answers_heur,tempo_heur, happy_heur,colored_heur,validaheur,validaback)
+    return (nodes_processed,time_spent,answer_back, happy_back,colored_back,answer_heur,answers_heur,tempo_heur, happy_heur,colored_heur,validaheur,validaback,best_gamma)
 # Caminho da pasta com os arquivos
 #folder_path = '/home/rafael/Documents/HappySet/MIHS/inputs/happygen/output/testes/testes_cp_benders'
 # folder_path ='/home/rafael/Documents/HappySet/MIHS/inputs/happygen/output/testes/7-10'

@@ -1,7 +1,7 @@
 #include <bits/stdc++.h> // Todas as bibliotecas padrão de c++
 #include <iostream>
 #include "gera_grafos.hpp"
-#include "maxsetguloso.hpp"
+#include "maxsetgulosonovaabordagem.hpp"
 
 
 //randomizar isso daqui

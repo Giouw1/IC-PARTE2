@@ -1,5 +1,5 @@
-#ifndef maxsetoguloso
-#define maxsetguloso
+#ifndef maxsetgulosonovaabordagem
+#define maxsetgulosonovaabordagem
 #include <bits/stdc++.h> // Todas as bibliotecas padrão de c++
 #include <iostream>
 #include <filesystem>

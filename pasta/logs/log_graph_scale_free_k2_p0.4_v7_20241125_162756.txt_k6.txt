@@ -25,7 +25,7 @@ Initializing dual steep norms . . .
 Iteration log . . .
 Iteration:     1   Dual infeasibility =             6.000000
 Iteration:     8   Dual objective     =             6.000000
-2025-06-06 14:06:36,121 - INFO - Tempo de execução da LP: 0.0026 segundos
-2025-06-06 14:06:36,124 - INFO - Valor da função objetivo da LP: 6.0000
-2025-06-06 14:06:36,126 - INFO - Valores de y (LP): [0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571]
-2025-06-06 14:06:36,129 - INFO - Valores de h (LP): [0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571]
+2025-06-06 15:25:33,055 - INFO - Tempo de execução da LP: 0.0027 segundos
+2025-06-06 15:25:33,058 - INFO - Valor da função objetivo da LP: 6.0000
+2025-06-06 15:25:33,060 - INFO - Valores de y (LP): [0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571]
+2025-06-06 15:25:33,062 - INFO - Valores de h (LP): [0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571]

@@ -25,14 +25,14 @@ Initializing dual steep norms . . .
 Iteration log . . .
 Iteration:     1   Dual infeasibility =             6.000000
 Iteration:     8   Dual objective     =             5.000000
-2025-06-06 14:06:35,897 - INFO - Tempo de execução da LP: 0.0027 segundos
-2025-06-06 14:06:35,900 - INFO - Valor da função objetivo da LP: 5.0000
-2025-06-06 14:06:35,902 - INFO - Valores de y (LP): [0.7143, 0.7143, 0.7143, 0.7143, 0.7143, 0.7143, 0.7143]
-2025-06-06 14:06:35,904 - INFO - Valores de h (LP): [0.7143, 0.7143, 0.7143, 0.7143, 0.7143, 0.7143, 0.7143]
-2025-06-06 14:06:36,055 - INFO - Iniciando a otimização com CP Optimizer.
-2025-06-06 14:06:36,091 - INFO - Iniciando a otimização com o modelo original.
-2025-06-06 14:06:36,116 - INFO - Resolvendo a relaxação linear (LP).
-2025-06-06 14:06:36,121 - INFO - Tempo de execução da LP: 0.0026 segundos
-2025-06-06 14:06:36,124 - INFO - Valor da função objetivo da LP: 6.0000
-2025-06-06 14:06:36,126 - INFO - Valores de y (LP): [0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571]
-2025-06-06 14:06:36,129 - INFO - Valores de h (LP): [0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571]
+2025-06-06 15:25:32,728 - INFO - Tempo de execução da LP: 0.0032 segundos
+2025-06-06 15:25:32,733 - INFO - Valor da função objetivo da LP: 5.0000
+2025-06-06 15:25:32,737 - INFO - Valores de y (LP): [0.7143, 0.7143, 0.7143, 0.7143, 0.7143, 0.7143, 0.7143]
+2025-06-06 15:25:32,742 - INFO - Valores de h (LP): [0.7143, 0.7143, 0.7143, 0.7143, 0.7143, 0.7143, 0.7143]
+2025-06-06 15:25:32,934 - INFO - Iniciando a otimização com CP Optimizer.
+2025-06-06 15:25:32,970 - INFO - Iniciando a otimização com o modelo original.
+2025-06-06 15:25:33,050 - INFO - Resolvendo a relaxação linear (LP).
+2025-06-06 15:25:33,055 - INFO - Tempo de execução da LP: 0.0027 segundos
+2025-06-06 15:25:33,058 - INFO - Valor da função objetivo da LP: 6.0000
+2025-06-06 15:25:33,060 - INFO - Valores de y (LP): [0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571]
+2025-06-06 15:25:33,062 - INFO - Valores de h (LP): [0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571, 0.8571]

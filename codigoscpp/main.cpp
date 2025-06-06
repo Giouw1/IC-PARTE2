@@ -108,6 +108,7 @@ int main(int argc, char* argv[]) { //Colocar os parâmetros N interações heur�
     unordered_set<int> happyheur;
     pair<unordered_set<int>,unordered_set<int>> getterheur;
     unordered_set<int> respostas;
+    float best_gamma;
     
     double tempo_total = 0;
     clock_t clock_starte;
@@ -115,29 +116,33 @@ int main(int argc, char* argv[]) { //Colocar os parâmetros N interações heur�
     //validaback ta errado, ver
     //chama a heurística
     //Ver esse I: tem que ser uma parâmetro.
-    for (int i = 0;i<n;i++){//marcar todos os resultados e ver os tempos total e ?individual?
-        //A lógica de "ajuda" é para sempre armazenar a solução de maior valor encontrada
-        ajuda = solutionheur;
-        clock_starte = clock();
-        tie(solutionheur,getterheur) = felicidade_maxima_guloso(g,graus,k,seed+i,gamma);
-        clock_ende = clock();
-        /*if((menor_tempo == -1)or menor_tempo>double((clock_end-clock_start)/CLOCKS_PER_SEC)){
-            menor_tempo = double((clock_ende-clock_starte)/CLOCKS_PER_SEC);
-        }
-        if (double((clock_ende-clock_starte)/CLOCKS_PER_SEC)>maior_tempo){
-            maior_tempo = double((clock_ende-clock_starte)/CLOCKS_PER_SEC);
-        }
-        Não sei se é necessário
-        */ 
+    while (gamma>=1){
+        for (int i = 0;i<n;i++){//marcar todos os resultados e ver os tempos total e ?individual?
+            //A lógica de "ajuda" é para sempre armazenar a solução de maior valor encontrada
+            ajuda = solutionheur;
+            clock_starte = clock();
+            tie(solutionheur,getterheur) = felicidade_maxima_guloso(g,graus,k,seed+i,gamma);
+            clock_ende = clock();
+            /*if((menor_tempo == -1)or menor_tempo>double((clock_end-clock_start)/CLOCKS_PER_SEC)){
+                menor_tempo = double((clock_ende-clock_starte)/CLOCKS_PER_SEC);
+            }
+            if (double((clock_ende-clock_starte)/CLOCKS_PER_SEC)>maior_tempo){
+                maior_tempo = double((clock_ende-clock_starte)/CLOCKS_PER_SEC);
+            }
+            Não sei se é necessário
+            */ 
 
-        tempo_total += static_cast<double>((clock_ende-clock_starte))/CLOCKS_PER_SEC;
-        respostas.insert(solutionheur);
-        if (ajuda>solutionheur){
-            solutionheur = ajuda; //colocar no arquivo intermediário os dados de tempo e das respostas no geral
-        }else{    
-            happyheur = getterheur.first;
-            selected_heur = getterheur.second;
+            tempo_total += static_cast<double>((clock_ende-clock_starte))/CLOCKS_PER_SEC;
+            respostas.insert(solutionheur);
+            if (ajuda>solutionheur){
+                solutionheur = ajuda; //colocar no arquivo intermediário os dados de tempo e das respostas no geral
+            }else{    
+                happyheur = getterheur.first;
+                selected_heur = getterheur.second;
+                best_gamma = gamma;
+            }
         }
+        gamma = gamma - 0.1;
     }
     arquivoresult<<solutionheur<< endl;
     arquivoresult<<tempo_total<<endl; 
@@ -168,6 +173,7 @@ int main(int argc, char* argv[]) { //Colocar os parâmetros N interações heur�
     for (int element: respostas){
         arquivoresult<<"r"<<" "<<element<<endl;
     }
+    arquivoresult<<"bg"<<best_gamma<<endl;
     if (errorr == 1){
         arquivoresult<<"ERROH"<<endl;
     }
